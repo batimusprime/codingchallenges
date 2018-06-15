@@ -1,0 +1,15 @@
+# Demonstration of travelling salesperson problem
+## Coding Train Coding Challenge #35 / Youtube
+----
+
+### Shortest # of pixels in path are logged to console
+### Current config will find best path, however will not update bestEver path visually when a better path is found
+### v1.0 - This is just a mechanism for displaying visually the problem solving algorithms
+
+### ToDo:
+* Clean-up code
+* let vs var
+* colors
+* centering
+* display text
+* add city names
