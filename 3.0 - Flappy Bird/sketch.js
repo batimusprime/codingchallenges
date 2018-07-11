@@ -9,11 +9,12 @@ function setup(){
 }
 function draw(){
     background(0);
+    
     bird.show();
     bird.update();
     
     //push a pipe to the array  every 100 frames
-    if (frameCount % 100 == 0){
+    if (frameCount % 75 == 0){
         
         pipes.push(new Pipe());
     
@@ -42,13 +43,13 @@ function draw(){
     
 }
 //detect user input
-function keyPressed(){
-    
-    if (key == ' '){
-    
-        bird.up();
-    
-    }
-
-
-}
+//function keyPressed(){
+//    
+//    if (key == ' '){
+//    
+//        bird.up();
+//    
+//    }
+//
+//
+//}

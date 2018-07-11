@@ -1,10 +1,12 @@
 function Pipe(){
 
-    this.top = random(height/2);
-    this.bottom = random(height/2);
+
+      this.spacing = 175;
+  this.top = random(height / 6, 3 / 4 * height);
+this.bottom = height - (this.top + this.spacing);
     this.x = width;
-    this.w = 20;
-    this.speed = 4;
+    this.w = 30;
+    this.speed = 2;
     
     this.hightlight = false;
     this.hits = function(bird){
@@ -27,7 +29,7 @@ function Pipe(){
 
     this.show = function(){
         fill(255);
-        
+        noStroke();
         if (this.highlight){
             fill(0,255,0);
         

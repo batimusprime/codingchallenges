@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- local files -->
+        <script src="script.js"></script>
+
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    
+    <body>
+
+    <div id="wrapper">
+        
+        <!-- row 1 -->
+        <div id="title">FENWAY PARK</div>
+        
+        <table>
+        
+            <!-- row 2 -->
+            <tr>
+            
+                <td>P</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td class="line">|</td>
+                <td>R</td>
+                <td>H</td>
+                <td>E</td>
+                <td class="line">|</td>   
+
+            </tr>
+
+            <!-- row 3 -->
+            <tr>
+            <td class="a_pitch_num">00</td>
+            <td colspan = "4" class="a_team_name">STL</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="line">|</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="inc">0</td>
+            <td class="line">|</td> 
+
+            </tr>
+
+            <!-- row 4 -->
+            <tr>
+            <td>00</td>
+            <td colspan="4">BOSTON</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="line">|</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="line">|</td> 
+
+            </tr>
+
+        </table>
+        
+        <hr>
+
+    </div><!-- /wrapper -->
+    
+    <br>
+    
+    <div id="controls">
+        
+        <div id="pitcher_number">
+        
+            <span>Away Pitcher Number:</span>  
+
+            <input type="number" id="a_pitch_num_box" name="pitcher_number" placeholder="00" step="1" min="0" max="99"/>
+
+            <input type="button" value="Away Pitcher" id="a_pitch_sub">
+
+        </div>
+
+    <br/>
+    Away Team Name:  
+    <select name="teams" id="teams">
+        <optgroup label = "AL East">
+       
+            <option value="NYY">New York Yankees</option>
+            <option value="TB">Tampa Bay Rays</option>
+            <option value="TOR">Toronto Blue Jays</option>
+            <option value="BAL">Baltimore Orioles</option>
+        
+        </optgroup>
+        
+        <optgroup label = "AL Central">
+        
+            <option value="CLE">Cleveland Indians</option>
+            <option value="MIN">Minnesotta Twins</option>
+            <option value="DET">Detroit Tigers</option>
+            <option value="CWS">Chicago White Sox</option>
+            <option value="KC">Kansas City Royals</option>
+        
+        </optgroup>
+        
+        <optgroup label = "AL West">
+        
+            <option value="HOU">Houston Astros</option>
+            <option value="SEA">Seattle Mariners</option>
+            <option value="OAK">Oakland Athletics</option>
+            <option value="LAA">Los Angeles Angels</option>
+            <option value="TEX">Texas Rangers</option>
+        
+        </optgroup>
+        
+        <optgroup label = "NL East">
+            
+            <option value="PHI">Philladelphia Phillies</option>
+            <option value="ATL">Atlanta Braves</option>
+            <option value="WAS">Washington Nationals</option>
+            <option value="NYM">New York Mets</option>
+            <option value="MIA">Miami Marlins</option>
+
+        </optgroup>
+        
+        <optgroup label = "NL Central">
+        
+            <option value="MIL">Milwaukee Brewers</option>
+            <option value="CHC">Chicago Cubs</option>
+            <option value="STL">St. Louis Cardinals</option>
+            <option value="PIT">Pittsburgh Pirates</option>
+            <option value="CIN">Cincinatti Reds</option>
+
+        </optgroup>
+        
+        <optgroup label = "NL West">
+            <option value="ARI">Arizona Diamondbacks</option>
+            <option value="LAD">Los Angeles Dodgers</option>
+            <option value="SF">San Francisco Giants</option>
+            <option value="COL">Colorado Rockies</option>
+            <option value="SD">San Diego Padres</option>
+
+        </optgroup>
+
+    </select>
+    
+    <input type="button" id="away_team_button" value="Away Team">
+
+
+
+    </div><!--/controls-->
+
+    </body>
+
+</html>

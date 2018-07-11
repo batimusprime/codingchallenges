@@ -1,0 +1,56 @@
+#wrapper{
+  margin: 0 auto;
+  width: 700px;
+  height: 300px;
+  color: white;
+  background-color: green;
+  margin-top: 10rem;
+  padding: .5rem;
+  text-align: center;
+  
+}
+
+table{
+  
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+/*  border: 1px solid black;*/
+  height: 50%;
+  
+}
+
+td{
+/*  border: 1px solid black;*/
+  
+}
+
+#title{
+  width: 100%;
+  font-size: 2rem;
+  letter-spacing: 2rem;
+  
+}
+
+#controls{
+  
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  
+}
+
+.line{
+
+    border: none!important;
+    background-color: white;
+    width: 2px!important;
+
+}
+
+hr{
+
+    height: 2px;
+    color: white;
+
+}

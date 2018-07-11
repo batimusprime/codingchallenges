@@ -4,7 +4,7 @@
 
 ### Shortest # of pixels in path are logged to console
 ### Current config will find best path, however will not update bestEver path visually when a better path is found
-### v1.0 - This is just a mechanism for displaying visually the problem solving algorithms
+### v1.0 - This is just a mechanism for visually displaying the problem solving algorithms
 
 ### ToDo:
 * Clean-up code

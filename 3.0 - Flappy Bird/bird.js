@@ -7,17 +7,22 @@ function Bird(){
     this.x = 65;
 
     //establish the gravity (force)effect on the object
-    this.gravity = .6;
+    this.gravity = .7;
     
     //velocity is the speed of the force acting on the object
-    this.velocity = .9;
+    this.velocity = 0;
     
     //magic lift applied via player input
-    this.lift = 14;
+    this.lift = -12;
     
+    
+    //NN
+    
+    this.brain = new NueralNetwork();
     //birds physical properties 
     this.show = function(){
         fill(255);
+        noStroke();
         ellipse(this.x,this.y,32,32);
     
     };
@@ -25,7 +30,7 @@ function Bird(){
     //key press lifts the bird
     this.up = function(){
     
-        this.velocity += -this.lift;
+        this.velocity += this.lift;
     
     }
     
@@ -34,7 +39,6 @@ function Bird(){
     
         //apply gravity to bird (push down)
         this.velocity += this.gravity;
-        this.velocty += 0.85;
         this.y += this.velocity;
     
         //stop bird at bottom
