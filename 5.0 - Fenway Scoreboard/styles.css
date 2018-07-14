@@ -1,15 +1,63 @@
+body{
+
+    background-color: rgb(77,123,113);
+
+}
+
 #wrapper{
-  margin: 0 auto;
+
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+     margin-top: 3rem;
+}
+#scoreboard{
+
   width: 700px;
   height: 300px;
   color: white;
-  background-color: green;
+  background-color:rgb(104,110,99);
   margin-top: 10rem;
   padding: .5rem;
   text-align: center;
+  border: 10px solid white;
+  margin: 0 auto;
+
+ -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#controls{
+  
+  background: rgba(255,255,255,.2);
+  width: 80%;
+margin: 0 auto;
+text-align: justify;
+  padding: 2rem;
+  font-size: 1.5rem;
+
+
   
 }
 
+.control{
+
+    margin: 0 auto;
+    text-align: center;
+    width: 70%
+
+}
+
+.team_drop{
+
+    width: 20%
+
+}
 table{
   
   width: 100%;
@@ -22,6 +70,7 @@ table{
 
 td{
 /*  border: 1px solid black;*/
+    font-weight: 800;
   
 }
 
@@ -29,28 +78,43 @@ td{
   width: 100%;
   font-size: 2rem;
   letter-spacing: 2rem;
-  
+  font-family: 'Aldrich', sans-serif;
+
 }
 
-#controls{
-  
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  
-}
+
+
 
 .line{
-
-    border: none!important;
+    outline: 1px solid white;
+    outline-offset: .5px!important;
+    transform: translateY(10px); 
     background-color: white;
-    width: 2px!important;
+    width: 1.5px!important;
 
 }
 
-hr{
+#bottom_line{
 
-    height: 2px;
-    color: white;
+    height: 10px;
+    width: 100%;
+    background-color: white;
+
+}
+
+.a_pitch_num{
+
+    width: 1.5rem;
+
+}
+
+#pitcher_number{
+
+
+}
+
+.h_total{
+
+    width: 1.5rem;
 
 }

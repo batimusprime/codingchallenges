@@ -7,6 +7,10 @@
         <meta charset="utf-8"/>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+
         <!-- local files -->
         <script src="script.js"></script>
 
@@ -17,12 +21,18 @@
     <body>
 
     <div id="wrapper">
-        
+    
+        <div id="scoreboard">
         <!-- row 1 -->
         <div id="title">FENWAY PARK</div>
         
         <table>
         
+            <!-- 
+                a = away team row
+                 h = home team row
+            --!>
+            
             <!-- row 2 -->
             <tr>
             
@@ -45,77 +55,91 @@
                 <td>R</td>
                 <td>H</td>
                 <td>E</td>
-                <td class="line">|</td>   
+<!--                <td class="line">|</td>   -->
 
             </tr>
 
             <!-- row 3 -->
             <tr>
+            
             <td class="a_pitch_num">00</td>
-            <td colspan = "4" class="a_team_name">STL</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
+            <td colspan = "4" class="a_name"></td>
+            <td class="a_inc inc" id="a0">0</td>
+            <td class="a_inc inc" id="a1">0</td>
+            <td class="a_inc inc" id="a2">0</td>
+            <td class="a_inc inc" id="a3">0</td>
+            <td class="a_inc inc" id="a4">0</td>
+            <td class="a_inc inc" id="a5">0</td>
+            <td class="a_inc inc" id="a6">0</td>
+            <td class="a_inc inc" id="a7">0</td>
+            <td class="a_inc inc" id="a8">0</td>
+            <td class="a_inc inc" id="a9">0</td>
             <td class="line">|</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="inc">0</td>
-            <td class="line">|</td> 
+            <td class="a_total inc">0</td>
+            <td class="a_inc inc">0</td>
+            <td class="a_inc inc">0</td>
+<!--            <td class="line">|</td> -->
 
             </tr>
 
             <!-- row 4 -->
-            <tr>
-            <td>00</td>
-            <td colspan="4">BOSTON</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+             <tr>
+            
+            <td class="h_pitch_num">00</td>
+            <td colspan = "4" class="h_team">BOSTON</td>
+            <td class="h_inc inc" id="h0">0</td>
+            <td class="h_inc inc" id="h1">0</td>
+            <td class="h_inc inc" id="h2">0</td>
+            <td class="h_inc inc" id="h3">0</td>
+            <td class="h_inc inc" id="h4">0</td>
+            <td class="h_inc inc" id="h5">0</td>
+            <td class="h_inc inc" id="h6">0</td>
+            <td class="h_inc inc" id="h7">0</td>
+            <td class="h_inc inc" id="h8">0</td>
+            <td class="h_inc inc" id="h9">0</td>
             <td class="line">|</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td class="line">|</td> 
+            <td class="h_total inc">0</td>
+            <td class="h_inc inc">0</td>
+            <td class="h_inc inc">0</td>
+<!--            <td class="line">|</td> -->
 
             </tr>
 
         </table>
         
-        <hr>
+        <div id="bottom_line"></div>
 
-    </div><!-- /wrapper -->
+    </div><!-- End Scoreboard -->
+    <br/>
+    <br/>
     
-    <br>
+    
     
     <div id="controls">
-        
-        <div id="pitcher_number">
-        
-            <span>Away Pitcher Number:</span>  
+    
+        <div id="pitcher_number" class="control">
+            <div id="away">
+            <span>Away Pitcher:</span>  
 
-            <input type="number" id="a_pitch_num_box" name="pitcher_number" placeholder="00" step="1" min="0" max="99"/>
+            <input type="number" id="a_pitch_num" name="a_pitcher_number" placeholder="00" step="1" min="00" max="99"/>
 
-            <input type="button" value="Away Pitcher" id="a_pitch_sub">
+            <input type="button" value="Away Pitcher" id="a_pitch">
+            </div>
+            <br/>
+            <div id="home">
+            
+            <span>Home Pitcher:</span>  
 
+            <input type="number" id="h_pitch_num" name="h_pitcher_number" placeholder="00" step="1" min="00" max="99"/>
+
+            <input type="button" value="Home Pitcher" id="h_pitch">
+            </div>
         </div>
 
     <br/>
-    Away Team Name:  
-    <select name="teams" id="teams">
+    <div id="a_team" class="control">
+    Away Team:  
+    <select name="teams" id="teams" class="team_drop">
         <optgroup label = "AL East">
        
             <option value="NYY">New York Yankees</option>
@@ -176,12 +200,15 @@
 
     </select>
     
-    <input type="button" id="away_team_button" value="Away Team">
-
-
-
+    <input type="button" id="a_team" value="Away Team">
+    
+    </div>
+    <br/>
+<div id="reset" class="control">
+    <input type="button" value="Reset Scores" id="reset">
+    </div>
     </div><!--/controls-->
-
+    </div><!-- End Wrapper -->
     </body>
 
 </html>
