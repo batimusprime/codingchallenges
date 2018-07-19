@@ -36,13 +36,13 @@ var h_total = 0;
 
     });
     
-    // Sets away team name when user clicks submit button
-    $("#a_team").click(function(){
+//    // Sets away team name when user clicks submit button
+//    $("#a_team").click(function(){
+//
+//        var value = document.getElementById('teams').value;
+//        $(".a_name").text(value);
 
-        var value = document.getElementById('teams').value;
-        $(".a_name").text(value);
-
-    });
+ //   });
     
     // Increments an individual score cell
     function increment($team){
@@ -108,26 +108,23 @@ r_sub.length = 0;
     for (var i = 0; i<=9; i++){
 
         //create ID tag of div using for loop
-        var hot = ("#a" + i);
+        var idt = ("#a" + i);
 
 
         //get the String of that cell using the created ID tag
-        var hott = $(hot).text();
-
         //turn that string into an int
-        var trot = parseInt(hott);
-
+        s_int = parseInt($(idt).text());
         //push that int to the array
-        r_sub.push(trot);
+        r_sub.push(s_int);
     
     }
 
     //returns sum of array
     var htop = r_sub.reduce((a, b) => a + b)
 
-    //write that sum to the home runs cell
+    //write that sum to the away runs cell
     $(".a_total").text(htop);
-    console.log(n_team);
+
    
 
     }
@@ -157,13 +154,45 @@ r_sub.length = 0;
 
     //write that sum to the home runs cell
     $(".h_total").text(t_run);
-    console.log(n_team);
  
 
     }
 
 
 };
+
+
+
+//import firebase data
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBA3BKgwWGa3-0P1w_PVkdZDBtgzqq06VE",
+    authDomain: "fenwayscore.firebaseapp.com",
+    databaseURL: "https://fenwayscore.firebaseio.com",
+    projectId: "fenwayscore",
+    storageBucket: "fenwayscore.appspot.com",
+    messagingSenderId: "39305187988"
+  };
+firebase.initializeApp(config);
+//initialize database
+
+var database = firebase.database();
+//create ref
+var ref = database.ref('last')
+
+//.on with two callbacks
+ref.on('value', gotData, errData);
+
+function gotData(data){
+  
+    //upon data change write to the dom element
+  $(".a_name").text(data.val());
+}
+
+function errData(err){
+    console.log('Error' + err)
+  
+}
 
 
 

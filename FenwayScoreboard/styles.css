@@ -1,9 +1,19 @@
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('sf.ttf');
+}
+
+
 body{
+
 
     background-color: rgb(77,123,113);
 
 }
+.end{
+    width: 2.1rem!important;
 
+}
 #wrapper{
 
     width: 75%;
@@ -14,7 +24,7 @@ body{
 #scoreboard{
 
   width: 700px;
-  height: 300px;
+  height: 400px;
   color: white;
   background-color:rgb(104,110,99);
   margin-top: 10rem;
@@ -34,12 +44,12 @@ body{
 
 #controls{
   
-  background: rgba(255,255,255,.2);
-  width: 80%;
-margin: 0 auto;
-text-align: justify;
-  padding: 2rem;
-  font-size: 1.5rem;
+    background: rgba(255,255,255,.2);
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 2rem;
+    font-size: 1.5rem;
 
 
   
@@ -53,11 +63,13 @@ text-align: justify;
 
 }
 
+/*
 .team_drop{
 
     width: 35%;
 
 }
+*/
 table{
   
   width: 100%;
@@ -92,6 +104,7 @@ td{
     background-color: white;
     width: 1.5px!important;
 
+
 }
 
 #bottom_line{
@@ -117,4 +130,72 @@ td{
 
     width: 1.5rem;
 
+}
+
+.inc{
+
+    border-bottom: 2px solid rgb(84, 89, 80);
+    border-right: 1px solid black;
+    background-color: rgba(84, 89, 80,.1);
+
+}
+
+
+#at_bat{
+
+    width: 20%;
+    height: 25%;
+     
+}
+#ab_title, #ball_text{
+
+    font-size: 2rem;    
+    letter-spacing: .4rem;
+    width: 110%;
+}
+
+#l_num{float: left;}
+#r_num{float: right;}
+
+
+.num{
+    background-color: rgba(0,0,0,.2);
+    width: 47%;
+    border: 2px solid black;
+    height:100%;
+    margin-top: 1rem;
+    line-height: 5.2rem;
+    font-size: 7rem;     
+    font-family: "digital-clock-font";
+
+}
+.h_team{
+    font-size: 1.5rem;
+    width: 25%;
+
+}
+#bot_contain{
+    width: 100%;
+    display: flex;
+    padding: .1rem;
+
+}
+#at_bat{
+
+    width: 20%;
+    
+}
+#ball{
+
+    width:20%;
+    padding-left: 1rem;
+    
+}
+
+
+.a_name{
+
+    
+  font-size: 1.5rem;
+    width: 25%;
 }

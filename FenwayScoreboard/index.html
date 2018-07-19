@@ -10,6 +10,11 @@
         
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+        
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+
 
         <!-- local files -->
         <script src="script.js"></script>
@@ -50,11 +55,11 @@
                 <td>7</td>
                 <td>8</td>
                 <td>9</td>
-                <td>10</td>
+                <td class="end">10</td>
                 <td class="line">|</td>
-                <td>R</td>
-                <td>H</td>
-                <td>E</td>
+                <td class="end">R</td>
+                <td class="end">H</td>
+                <td class="end">E</td>
 <!--                <td class="line">|</td>   -->
 
             </tr>
@@ -108,7 +113,43 @@
         </table>
         
         <div id="bottom_line"></div>
-
+        
+        <div id="bot_contain">
+        
+            <div id="at_bat">
+        
+            <div id="ab_title" class="title">AT BAT</div>
+            <div id="l_num" class="num">0</div>
+            <div id="r_num" class="num">0</div>
+            
+            </div>
+        
+        
+       <div id="ball">
+        <div id="ball_text" class="title">BALLS</div>
+         <div id="lights">
+        <div id="ball_l1" class="blight"></div>
+        <div id="ball_l2" class="blight"></div>
+        <div id="ball_l3" class="blight"></div>
+        
+        </div>
+        </div>
+        
+        <div id="strike"></div>
+        <div id="out"></div>
+        <div id="hits"></div>
+        <div id=errors>
+        <div id="led"></div>
+        </div>
+        </div>
+        </div>
+        
+    </div><!-- End Scoreboard -->
+    </div><!-- End Scoreboard -->
+    </div><!-- End Scoreboard -->
+    </div><!-- End Scoreboard -->
+    </div><!-- End Scoreboard -->
+    </div><!-- End Scoreboard -->
     </div><!-- End Scoreboard -->
     <br/>
     <br/>
@@ -138,7 +179,7 @@
 
     <br/>
     <div id="a_team" class="control">
-    Away Team:  
+    <!--Away Team:  
     <select name="teams" id="teams" class="team_drop">
         <optgroup label = "AL East">
        
@@ -200,7 +241,7 @@
 
     </select>
     
-    
+    -->
     </div>
     <br/>
 <div id="reset" class="control">
