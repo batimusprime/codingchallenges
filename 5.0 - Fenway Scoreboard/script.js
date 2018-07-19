@@ -36,13 +36,6 @@ var h_total = 0;
 
     });
     
-//    // Sets away team name when user clicks submit button
-//    $("#a_team").click(function(){
-//
-//        var value = document.getElementById('teams').value;
-//        $(".a_name").text(value);
-
- //   });
     
     // Increments an individual score cell
     function increment($team){
