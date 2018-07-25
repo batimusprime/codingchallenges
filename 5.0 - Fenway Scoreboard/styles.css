@@ -55,7 +55,7 @@ body{
   
 }
 
-.control{
+.control{   
 
     margin: 0 auto;
     text-align: center;
@@ -107,11 +107,12 @@ td{
 
 }
 
-#bottom_line{
+#bot_line{
 
     height: 10px;
     width: 100%;
     background-color: white;
+    margin-bottom: .5rem;
 
 }
 
@@ -141,18 +142,6 @@ td{
 }
 
 
-#at_bat{
-
-    width: 20%;
-    height: 25%;
-     
-}
-#ab_title, #ball_text{
-
-    font-size: 2rem;    
-    letter-spacing: .4rem;
-    width: 110%;
-}
 
 #l_num{float: left;}
 #r_num{float: right;}
@@ -174,23 +163,6 @@ td{
     width: 25%;
 
 }
-#bot_contain{
-    width: 100%;
-    display: flex;
-    padding: .1rem;
-
-}
-#at_bat{
-
-    width: 20%;
-    
-}
-#ball{
-
-    width:20%;
-    padding-left: 1rem;
-    
-}
 
 
 .a_name{
@@ -198,4 +170,105 @@ td{
     
   font-size: 1.5rem;
     width: 25%;
+}
+
+
+/*  -- begin bottom part of scoreboard -- */
+
+#bot_contain{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-around;
+    align-items: strech;
+    align-content: space-between;
+    
+}
+
+
+.bot_item{
+
+/*    border: 2px solid blue;*/
+    width: 15%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title{
+
+    height: 2rem;
+/*    border: 2px solid yellow;*/
+    width: 98%;
+    order: 0;
+
+}
+.bot_item_a{
+
+    width: 100%;
+    height: 80%;
+/*    border: 2px solid green;*/
+    display: flex;
+    justify-content:space-around;
+    align-content: center;
+
+}
+
+.ab_light{
+
+    width: 50%;
+/*    border: 2px solid red;*/
+    font-size: 5rem;
+    font-family: 'Aldrich', sans-serif;
+    transform: scale(1,1.8);
+    padding-top: 1rem;
+
+
+}
+
+span{
+
+    font-size: 1.5rem;
+
+}
+
+.g_light{
+
+    width: 28%;
+    height: 2rem;
+    border-radius: 50%;
+    align-self: center;
+
+}
+
+.g_on{
+
+    background-color: lawngreen;
+
+
+}
+
+.r_light{
+
+    width: 28%;
+    height: 2rem;
+    border-radius: 50%;
+    align-self: center;
+
+}
+
+
+.r_on{
+
+    background-color: red;
+
+
+}
+
+.light{
+
+    border: 1px solid gray;
+
 }

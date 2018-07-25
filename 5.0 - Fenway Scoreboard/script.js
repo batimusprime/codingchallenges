@@ -80,6 +80,20 @@ var h_total = 0;
         $(".inc").html(0);
     
     });
+    
+    //turn lights on and off
+    $(".r_light").click(function(){
+    
+        ($(this)).toggleClass("r_on");
+    
+    })
+    $(".g_light").click(function(){
+    
+        ($(this)).toggleClass("g_on");
+    
+    })
+    
+
 
     
 });//end document ready
