@@ -5,6 +5,7 @@
     <head>
 
         <meta charset="utf-8"/>
+        <title>Fenway Scoreboard Simulator</title>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
@@ -67,7 +68,7 @@
             <!-- row 3 -->
             <tr>
             
-            <td class="a_pitch_num">00</td>
+            <td class="a_pitch_disp">00</td>
             <td colspan = "4" class="a_name"></td>
             <td class="a_inc inc" id="a0">0</td>
             <td class="a_inc inc" id="a1">0</td>
@@ -90,7 +91,7 @@
             <!-- row 4 -->
              <tr>
             
-            <td class="h_pitch_num">00</td>
+            <td class="h_pitch_disp">00</td>
             <td colspan = "4" class="h_team">BOSTON</td>
             <td class="h_inc inc" id="h0">0</td>
             <td class="h_inc inc" id="h1">0</td>
@@ -122,8 +123,7 @@
                     <span id="ab_title">AT BAT</span>
                 </div>
                 <div class="bot_item_a">
-                    <div class="ab_light">0</div>
-                    <div class="ab_light">0</div>
+                    <div class="ab_light at_bat_disp">00</div>
                 </div>
 
             </div>
@@ -203,9 +203,9 @@
     <br/>
     
     
-    
+      <div id="control_button"><span id="x_button">=</span></div>
     <div id="controls">
-    
+  
         <div id="pitcher_number" class="control">
             <div id="away">
             <span>Away Pitcher:</span>  
@@ -222,6 +222,15 @@
             <input type="number" id="h_pitch_num" name="h_pitcher_number" placeholder="00" step="1" min="00" max="99"/>
 
             <input type="button" value="Home Pitcher" id="h_pitch">
+            </div>
+            <br/>
+            <div id="bat">
+            
+            <span>At Bat:</span>  
+
+            <input type="number" id="at_bat_num" name="h_pitcher_number" placeholder="00" step="1" min="00" max="99"/>
+
+            <input type="button" value="At Bat" id="at_bat">
             </div>
         </div>
 

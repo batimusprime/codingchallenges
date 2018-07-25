@@ -42,34 +42,8 @@ body{
                                   supported by Chrome and Opera */
 }
 
-#controls{
-  
-    background: rgba(255,255,255,.2);
-    width: 80%;
-    margin: 0 auto;
-    text-align: justify;
-    padding: 2rem;
-    font-size: 1.5rem;
 
 
-  
-}
-
-.control{   
-
-    margin: 0 auto;
-    text-align: center;
-    width: 70%
-
-}
-
-/*
-.team_drop{
-
-    width: 35%;
-
-}
-*/
 table{
   
   width: 100%;
@@ -224,6 +198,8 @@ td{
     font-family: 'Aldrich', sans-serif;
     transform: scale(1,1.8);
     padding-top: 1rem;
+    /* you know what you've done*/
+    margin-left: -4rem;
 
 
 }
@@ -270,5 +246,49 @@ span{
 .light{
 
     border: 1px solid gray;
+
+}
+
+/* Begin Controls */
+
+#controls{
+  
+    background: rgba(255,255,255,.2);
+    width: 40%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 2rem;
+    font-size: 1.5rem;
+
+
+  
+}
+
+.control{   
+
+    margin: 0 auto;
+    text-align: center;
+    width: 70%
+
+}
+
+#x_button{
+
+    font-size: 4rem;
+    cursor: default;
+
+/* remove selection highlighting, prefixes */
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.hidden{
+    
+    display: none;
 
 }

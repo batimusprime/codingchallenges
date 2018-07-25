@@ -21,15 +21,15 @@
 ---
 ### TODO:
 - [] Fix right-hand lines border
-- [X] Fix 10th inning
+- [x] Fix 10th inning
 - [] Allow for double-digit run innings
-- [X] Firebase Database Integration
+- [x] Firebase Database Integration
 - [x] Implement proper UI 
 - [] Convert all jQuery event listeners to functions
 - [] Scrape data from web to Firebase DB(Seperate project)
 - [] Bind data to functions from #1
 - [] Move UI to flyout menu
-- [] Add bottom features (batter,bso,h,e lights)
+- [x] Add bottom features (batter,bso,h,e lights)
 
 ## Future Plans:
 * Stylize
@@ -44,3 +44,11 @@
     - Play Sweet Caroline during seventhing inning stretch
     - Baseball ricochet sounds with P5.js animation for home team runs 
     - Boos for away team runs
+    
+    
+## Project Plans:
+
+[x] Stage 1: Working mock up scoreboard
+[] Stage 2: Past game stats
+[] Stage 3: Add realism / rework design
+[] Stage 4: 

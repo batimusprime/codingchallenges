@@ -18,24 +18,55 @@ var h_total = 0;
        increment($(this));
 
     });
-
+    
+    
+    //set the away pitcher number
 
     $("#a_pitch").click(function(){
 
-        var value = document.getElementById('a_pitch_num').value;
-        
-        $(".a_pitch_num").text(value);
+        var a_value = document.getElementById('a_pitch_num').value;
+        $(".a_pitch_disp").text(a_value);
 
-    });  
+    });    
     
+    //set the home pitcher number
     $("#h_pitch").click(function(){
 
-        var value = document.getElementById('h_pitch_num').value;
+        var h_value = document.getElementById('h_pitch_num').value;
         
-        $(".h_pitch_num").text(value);
+        $(".h_pitch_disp").text(h_value);
 
     });
     
+        //set the batter number
+    
+    $("#at_bat").click(function(){
+
+        var ab_value = document.getElementById('at_bat_num').value;
+
+        //batter number cannot be greater than 99
+        if (ab_value > 99){
+            console.log("Invalid number")
+        
+        }
+        //batter number of 0 = 00 = 0 
+        else if (ab_value == 0 || ab_value == 00){
+                $(".at_bat_disp").text("00");
+            
+        
+        }
+        
+        //single digit add a leading zero (style)
+        else if (ab_value <= 9){
+        $(".at_bat_disp").text("0"+ab_value);
+        }
+        
+        //leaves only double digit numbers, which are displayed directly
+        else if (ab_value > 0 && ab_value < 99) {
+                $(".at_bat_disp").text(ab_value);
+        
+        }
+    });  
     
     // Increments an individual score cell
     function increment($team){
@@ -78,7 +109,7 @@ var h_total = 0;
     $("#reset").click(function(){
 
         $(".inc").html(0);
-    
+        $(".at_bat_disp").text("00");
     });
     
     //turn lights on and off
@@ -95,7 +126,15 @@ var h_total = 0;
     
 
 
-    
+//minimize controls
+
+$("#x_button").click(function(){
+
+    $("#controls").toggleClass("hidden")
+
+})
+
+ 
 });//end document ready
 
 
@@ -200,9 +239,4 @@ function errData(err){
     console.log('Error' + err)
   
 }
-
-
-
-
-
 
