@@ -1,3 +1,5 @@
+var features = [];
+var id;
 $(document).ready(function(){
 
 // Away total
@@ -62,7 +64,7 @@ var h_total = 0;
         }
         
         //leaves only double digit numbers, which are displayed directly
-        else if (ab_value > 0 && ab_value < 99) {
+        else if (ab_value > 0 && ab_value <= 99) {
                 $(".at_bat_disp").text(ab_value);
         
         }
@@ -224,7 +226,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 //create ref
-var ref = database.ref('last')
+var ref = database.ref('last');
 
 //.on with two callbacks
 ref.on('value', gotData, errData);
@@ -240,3 +242,38 @@ function errData(err){
   
 }
 
+//get home scores
+var ref1 = database.ref();
+
+ref1.on("value", function(snapshot) {
+   var h_score = snapshot.val();
+
+   //console.log(h_score.home.home_score0);
+   var h_0 = h_score.home.home_score0;
+   var h_1 = h_score.home.home_score1;
+   var h_2 = h_score.home.home_score2;
+   var h_3 = h_score.home.home_score3;
+   var h_4 = h_score.home.home_score4;
+   var h_5 = h_score.home.home_score5;
+   var h_6 = h_score.home.home_score6;
+   var h_7 = h_score.home.home_score7;
+   var h_8 = h_score.home.home_score8;
+   
+   
+   console.log(h_1)
+   //this is ineffective, for testing only
+   $("#h0").text(h_0);
+   $("#h1").text(h_1);
+   $("#h2").text(h_2);
+   $("#h3").text(h_3);
+   $("#h4").text(h_4);
+   $("#h5").text(h_5);
+   $("#h6").text(h_6);
+   $("#h7").text(h_7);
+   $("#h8").text(h_8);
+   
+    //total the home runs  
+    r_total("home")
+}, function (error) {
+   console.log("Error: " + error.code);
+});

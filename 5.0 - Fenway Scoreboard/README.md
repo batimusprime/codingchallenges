@@ -20,15 +20,15 @@
 #### Click E (error) and H (hit) cells to increase
 ---
 ### TODO:
-- [] Fix right-hand lines border
+- [ ] Fix right-hand lines border
 - [x] Fix 10th inning
-- [] Allow for double-digit run innings
+- [ ] Allow for double-digit run innings
 - [x] Firebase Database Integration
 - [x] Implement proper UI 
-- [] Convert all jQuery event listeners to functions
-- [] Scrape data from web to Firebase DB(Seperate project)
-- [] Bind data to functions from #1
-- [] Move UI to flyout menu
+- [ ] Convert all jQuery event listeners to functions
+- [ ] Scrape data from web to Firebase DB(Seperate project)
+- [ ] Bind data to functions from #1
+- [x] Move UI to flyout menu
 - [x] Add bottom features (batter,bso,h,e lights)
 
 ## Future Plans:
