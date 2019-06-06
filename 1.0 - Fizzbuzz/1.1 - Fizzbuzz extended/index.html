@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<style>
+
+/* -- global styles --*/    
+html{
+
+    text-align: center;
+
+}
+
+/* -- box class gives elem defined dimensions and margins -- */
+.box{
+
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+
+
+
+}
+
+/* -- Flexbox container --*/
+#container{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* -- Individual box styles --*/
+#green{
+
+    background-color: rgb(183, 224, 183);
+
+}
+
+#blue{
+
+    background-color:lightskyblue;
+
+}
+
+</style>    
+<!-- flexbox container -->
+<div id = "container">
+    <!-- click targets -->
+    <div id = "green" class = "box"></div>
+
+    <div id = "blue" class = "box"></div>
+
+</div>
+
+<!-- status displays-->
+<div id="status"></div>
+
+<div id="totalStatus"></div>
+
+<script>
+
+    //increment to display alerts, default 10
+    var inc = 10;
+
+    //automatically create array with numbers 0 - 99
+    var bucket = Array.apply(null, {length: 100}).map(Number.call, Number)
+    
+    
+    //get DOM elements as variable
+    var green = document.getElementById("green");
+    var blue = document.getElementById("blue");
+   
+    //initialize counters for each element
+    var greenCount = 0;
+    var blueCount = 0;
+    var totalCount = 0;
+
+
+    //called when clicked blue
+    blue.onclick = function(){
+        //increment the count
+        blueCount++
+
+         //display the message inside the status HTML element
+        document.getElementById("status").innerHTML = ("You've clicked " + blue.id + " " + blueCount + " times!")
+        
+        totalCount = totalCount + 1;
+
+        display(totalCount)
+    };
+
+    //called when clicked green
+    green.onclick = function(){
+        
+        //increment the count
+        greenCount++
+
+        //display the message inside the status HTML element
+        var message = document.getElementById("status").innerHTML= ("You've clicked " + green.id + " " + greenCount + "!");
+        
+        totalCount = totalCount + 1;
+
+        display(totalCount)
+    
+    }
+    
+
+    function display(totalCount){
+        
+        
+        
+        //display alert every N clicks
+        //if modulo N results in a number between 1-100 display alert
+        //uses decimal place to avoid alerts every click, click count is 5.1, 5.2, 5.3 etc
+        var testCount = (totalCount/inc); 
+        
+        //check if the count number, whole number only, is in the array
+        if (bucket.includes(testCount)){
+            //display the message inside the totalStatus HTML element
+
+             var totalStatus = document.getElementById("totalStatus").innerHTML = ("Your total clicks are a multiple of " + inc + " \(" + testCount + "*" + inc + ")");
+
+        }
+
+    }
+</script>
+</body>
+</html>
