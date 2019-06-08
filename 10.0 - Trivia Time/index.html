@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="push.js"></script>
+    <script src="sketch.js"></script>
+    
+</head>
+<body>
+<style>
+html{
+
+    text-align: center;
+/*    padding-top: 20px;*/
+
+}
+
+button{
+
+    width: 4rem;
+    height: 2rem;
+    margin: .5rem;
+}
+
+</style>
+<div id = "main"></div>
+<div id = "ans">
+<form method = "get">
+<button type = "button" onclick = "question.answer('1')">A</button>
+<button type = "button" onClick = "question.answer('2')">B</button>
+<button type = "button" onClick = "question.answer('3')">C</button>
+<button type = "button" onClick = "question.answer('4')">D</button>
+<button type = "button" onClick = "question.next();">Submit</button>
+
+</form>
+</div>
+
+
+
+    </div>
+
+</body>
+</html>
