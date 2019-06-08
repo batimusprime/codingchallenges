@@ -1,50 +1,41 @@
-//Number of questions (qcount) must be updated manually
-
-var qcount = 5;
-
 //empty array
 var a = [];
 
 
 //dictionary for each question
-var q0 = {
+var q1 = {
   
   q: "The Question",
   a: 1
 };
 
-var q1 = {
+var q2 = {
   
   q: "The Second Question",
   a: 2
 };
 
-var q2 = {
+var q3 = {
   
   q: "The Third Question",
   a: 3
 };
 
-var q3 = {
+var q4 = {
   
   q: "The Fourth Question",
   a: 4
 };
 
-var q4 = {
+var q5 = {
   
   q: "The Fifth Question",
   a: 1
 };
 
 //display
-for (i=0;i<qcount;i++){
+a.push(q1,q2,q3,q4,q5)
 
-//eval allows for dynamic creation of variable names
-a.push(eval("q"+i))
-    
-}
-console.log(a)
 //for(i=0;i<a.length;i++){
 //console.log("this is the question: "  + a[i].q)
 //console.log("this is the answer: " + a[i].a)

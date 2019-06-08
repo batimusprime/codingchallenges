@@ -1,3 +1,11 @@
+/*
+
+issues finding end of array, currently question disappears and error is thrown when end is reached and correct answer is entered again 
+
+*/
+
+
+
 //var chars = [andy,angela,creed,darryl,dwight,jim,kelly,kevin,meredith,michael,oscar,pam,ryan,stanley]
 //initialize character options
 var andy;
@@ -14,7 +22,6 @@ quest = {}
 var i = 0;
 
 //question and answer ident
-var qnum = 0;
 var corAns = 1;
 
 
@@ -63,7 +70,7 @@ function draw(){
     player.show();
     
     //display question
-    question.show(qnum);
+    question.show(i);
 
 }
 
@@ -92,8 +99,9 @@ function Question(){
     //display question
     this.show = function(){
     
-    //get question from array, increase by one so no question 0 is displayed
-    q = ("Question " + (qnum+1) + ": " + quest[i]);
+    //get question from array in push.js 
+    //increase question number display by one so no 0 is displayed
+    q = ("Question " + (i+1) + ": " + a[i].q);
     
     //text options
     textSize(18);
@@ -105,7 +113,6 @@ function Question(){
     //next question function
     this.next = function(){
     
-        qnum++;
         i++
     
     };
@@ -113,21 +120,31 @@ function Question(){
     //process answer
     this.answer = function(ans){
     
-    var ans = ans;
-    
-    //compare to correct answer
-    if (ans == corAns){
-    
-    console.log("correct!");
-    
-    //display next question
-    question.next();
-    
-    }
-    else{
-    
-        console.log("incorrect");
+        console.log(ans)
+        
+        //test answer given by HTML button with answer in push.js
+        //idk why it doesnt work is comparing 0 to 1 on the first one
+        if(i<a.length-1){
+        
+            if(a[i].a == ans){
+        
+                console.log("correct")
+        
+                //increment the count, can probably remove the next() function and just increment here
+                question.next();
+        
+        }
+        
+        else{
+        
+            console.log(a.length + " " + i);
+        }        
+        }
+        //TODO: turn this into test question function
+        else {
+        
+            "bigest oof"
+        }
     }
 
-}
 }
