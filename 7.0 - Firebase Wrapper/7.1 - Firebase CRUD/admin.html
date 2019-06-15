@@ -1,60 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Firebase Wrapper</title>
 
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
-
-<script src= "admin.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    
+    <script src= "admin.js"></script>
     
 </head>
+
 <body>
+    <style>
+    #container{
+    
+        display: flex;
+        justify-content: center;
+        
+    }
+    #statusContainer{
+        width: 50%;
+        height: 10rem;
+        border: 2px solid black;
+        margin: 2rem;
+        
+        
+    }
+    
+    #inputContainer{
+    
+        padding: 2rem;
+    }
+    
+    
+    input{
+    
+        margin: .5rem;
+        width: 10rem;
+    }
+    
+    #fields{
+    
+        display: flex;
+        flex-direction: column;
+    }
+    
+    </style>
+    <div id="container">
 
-<div id="container">
+        <div id="statusContainer">
+            
+            <ul id="status">
 
-<div id="status"></div>
+                <!-- status li elements dynamically here -->
+
+            </ul>
+
+
+        </div>
+
+<!-- /status -->
+
 </br>
+<!-- Input -->
+<div id ="inputs">
+
+<div id ="fields">
+
 Collection:
 <input type="text" id="inputTextCollect">
-</br>
+
 Document:
 <input type="text" id="inputTextDoc">
-</br>
+
 Key:
 <input type="text" id="inputTextKey">
-</br>
+
 Value:
 <input type="text" id="inputTextVal">
-</br>
 
-<!-- call get inputs with create argument &quot; is escape char -->
-
-<button type="button" onClick="getInput(&quot;c&quot;)">Create</button>
-
-<hr>
-
-</br>
-
-<div id="read"></div>
-<button type="button" onClick="getInput(&quot;r&quot;)">Read</button>
-<hr>
-
-</br>
-
-<div id="update"></div>
-<button type="button" onClick=getInput(&quot;u&quot;)>Update</button>
-
-<div id="delete"></div>
-<button type="button" onClick=getInput(&quot;d&quot;)>Delete</button>
-
-
+<!-- /fields -->
 </div>
 
+<!-- call get inputs with create argument &quot; is escape char -->
+<div id="buttons">
+<button type="button" onClick="getInput(&quot;c&quot;)">Create</button>
+
+<button type="button" onClick="getInput(&quot;r&quot;)">Read</button>
+
+<button type="button" onClick=getInput(&quot;u&quot;)>Update</button>
+
+<button type="button" onClick=getInput(&quot;d&quot;)>Delete</button>
+
+<!-- /buttons -->
+</div>
+<!-- /inputs -->
+</div>
+
+<!-- /container -->
+</div>
+
+<!-- main script execute -->
 <script src="admin.js"></script>
 
 

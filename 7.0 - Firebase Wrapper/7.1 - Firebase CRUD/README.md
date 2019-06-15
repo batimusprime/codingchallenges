@@ -23,9 +23,9 @@ Collection
 
 ## TODO
 
-- [] Create
+- [x] Create
 
-- [] Read
+- [x] Read
 
 - [] Update
 
@@ -35,8 +35,12 @@ Collection
 
 - [] Server confirmations not clientside
 
-- [] UI / UX
+- [] UI / UX improvements
 
-- [] Host
+- [] Hosting
 
 - [] Authentication
+
+- [] Input validation
+
+- [] Better exception handling

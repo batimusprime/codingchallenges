@@ -1,13 +1,11 @@
 /* 
 TODO:
-C - Create: Done
-R
-U
-D
+C - POST / Create: Done
+R - GET / Read: Done
+U - PUT / Update:
+D - DELETE / Delete:
 */
 
-var doc;
-var collection;
 //Firebase configuration
 var firebaseConfig = {
 
@@ -67,10 +65,10 @@ function getInput(section){
 };
 
 
-//create a record
+//create a record, HTML input fields as args
 function create(collect, doc, entry, val){
 
-// Add a new document in collection
+// Add a new document in collection with set
 db.collection(collect).doc(doc).set({
     key: entry,
     value: val,
@@ -78,7 +76,7 @@ db.collection(collect).doc(doc).set({
 .then(function() {
 
     //display status on HTML doc
-    document.getElementById("status").innerHTML += "Written: " + collect + " , " + doc + " , " + entry + " , " + val + "</br>";
+    document.getElementById("status").innerHTML += "<li>Written: </br> Collection: " + collect + "</br> Document: " + doc +"</br>  Key: " + entry + "</br> Value: " + val + "</li>";
 
 
 })
@@ -89,11 +87,11 @@ db.collection(collect).doc(doc).set({
 
 
 };
-//read from the db
-function read(cText, dText, eText,vText){
+//read from the db, HTML input fields as args
+function read(collect, doc){
 
 //identify collection and doc to query
-var docRef = db.collection(cText).doc(dText);
+var docRef = db.collection(collect).doc(doc);
 
 
 //get documentsnapshot
@@ -106,6 +104,8 @@ document.getElementById("inputTextKey").value = data.key
 //write value text to value field
 document.getElementById("inputTextVal").value = data.value
 
+//write status to status element
+document.getElementById("status").innerHTML += "<li>Read: </br> Key: " + data.key + "</br> Value: " + data.value + "</li>";
 
 });
 
