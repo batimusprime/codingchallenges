@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase Wrapper</title>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+
+<script src= "admin.js"></script>
+    
+</head>
+<body>
+
+<div id="container">
+
+<div id="status"></div>
+</br>
+Collection:
+<input type="text" id="inputTextCollect">
+</br>
+Document:
+<input type="text" id="inputTextDoc">
+</br>
+Key:
+<input type="text" id="inputTextKey">
+</br>
+Value:
+<input type="text" id="inputTextVal">
+</br>
+
+<!-- call get inputs with create argument &quot; is escape char -->
+
+<button type="button" onClick="getInput(&quot;c&quot;)">Create</button>
+
+<hr>
+
+</br>
+
+<div id="read"></div>
+<button type="button" onClick="getInput(&quot;r&quot;)">Read</button>
+<hr>
+
+</br>
+
+<div id="update"></div>
+<button type="button" onClick=getInput(&quot;u&quot;)>Update</button>
+
+<div id="delete"></div>
+<button type="button" onClick=getInput(&quot;d&quot;)>Delete</button>
+
+
+</div>
+
+<script src="admin.js"></script>
+
+
+</body>
+</html>
