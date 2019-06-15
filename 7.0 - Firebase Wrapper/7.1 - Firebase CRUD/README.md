@@ -16,9 +16,7 @@ Collection
       │       └Document      
       └F...    │      │
       │        └Field └Collection   
-      └F...    │
-               └F...
-
+      └F...       
 ```
 
 ## TODO
@@ -43,4 +41,4 @@ Collection
 
 - [] Input validation
 
-- [] Better exception handling
+- [] Exception handling -> Status display

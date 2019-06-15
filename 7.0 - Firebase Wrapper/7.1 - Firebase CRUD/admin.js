@@ -6,15 +6,19 @@ U - PUT / Update:
 D - DELETE / Delete:
 */
 
+//global variables
+//get status object as variable
+var display = document.getElementById("status");
+
 //Firebase configuration
 var firebaseConfig = {
 
     apiKey: "AIzaSyDMvU9zG7wDNToCe_S9C0AlRz3Ueln-_88",
-    authDomain: "trivia-time-d6aa3.firebaseapp.com",
+//    authDomain: "trivia-time-d6aa3.firebaseapp.com",
     databaseURL: "https://trivia-time-d6aa3.firebaseio.com",
     projectId: "trivia-time-d6aa3",
     storageBucket: "trivia-time-d6aa3.appspot.com",
-    messagingSenderId: "556461021563",
+//    messagingSenderId: "556461021563",
     appId: "1:556461021563:web:62bb8d475f922f05"
 
 };
@@ -75,9 +79,8 @@ db.collection(collect).doc(doc).set({
 })
 .then(function() {
 
-    //display status on HTML doc
-    document.getElementById("status").innerHTML += "<li>Written: </br> Collection: " + collect + "</br> Document: " + doc +"</br>  Key: " + entry + "</br> Value: " + val + "</li>";
-
+    //update status with parameters written
+    statusUpdate("Written: ", collect,doc,entry,val);
 
 })
 .catch(function(error) {
@@ -104,9 +107,19 @@ document.getElementById("inputTextKey").value = data.key
 //write value text to value field
 document.getElementById("inputTextVal").value = data.value
 
-//write status to status element
-document.getElementById("status").innerHTML += "<li>Read: </br> Key: " + data.key + "</br> Value: " + data.value + "</li>";
+;
+//update status with parameters written
+statusUpdate("Read:  ",collect,doc,data.key,data.value);
 
 });
 
 }
+
+function statusUpdate(stat, collect,doc, key, val){
+    //get current HTML from element
+    var current = document.getElementById("status").innerHTML
+   
+   //rewrite most current status on top, re-setting previous info on bottom for top down scroll
+    display.innerHTML = "<li><i> " + stat + "</i></br> " + "Collection: " + collect + "</br> Document: " + doc + "</br> Key: " + key + "</br> Value: " + val + "</li>" + current;
+
+};
