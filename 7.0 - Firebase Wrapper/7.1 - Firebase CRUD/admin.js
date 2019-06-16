@@ -34,32 +34,32 @@ function getInput(section){
 
     var cText = document.getElementById("inputTextCollect").value
     var dText = document.getElementById("inputTextDoc").value
-    var eText = document.getElementById("inputTextKey").value
+    var kText = document.getElementById("inputTextKey").value
     var vText = document.getElementById("inputTextVal").value
     
     // create    
     if(section == "c"){
     
         //c argument means create was clicked, call create func, r = read, etc.
-        create(cText,dText,eText,vText);
+        create(cText,dText,kText,vText);
 
     }
     //read
     else if (section == "r"){
     
-        read(cText,dText,eText,vText);
+        read(cText,dText,kText,vText);
         
 
     
     }
     else if (section == "u"){
     
-        update(cText,dText,eText,vText);
+        update(cText,dText,kText,vText);
     
     }
     else if (section == "d"){
     
-        delete(cText,dText,eText,vText);
+        delete(cText,dText,kText,vText);
     
     }
     else{
@@ -70,17 +70,17 @@ function getInput(section){
 
 
 //create a record, HTML input fields as args
-function create(collect, doc, entry, val){
+function create(collect, doc, key, val){
 
 // Add a new document in collection with set
 db.collection(collect).doc(doc).set({
-    key: entry,
+    key: key,
     value: val,
 })
 .then(function() {
 
     //update status with parameters written
-    statusUpdate("Written: ", collect,doc,entry,val);
+    statusUpdate("Written: ", collect,doc,key,val);
 
 })
 .catch(function(error) {
