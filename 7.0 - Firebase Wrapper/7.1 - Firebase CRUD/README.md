@@ -26,7 +26,7 @@ Collection
 
 - [x] Read
 
-- [x] Update*
+- [x] Update -- note
 
 - [] Delete
 
@@ -45,6 +45,8 @@ Collection
 - [] Security best practices review
 
 - [] Hosting
+
+- [] ENV API key
 
 **update is sort of inherent since Firestore actually uses GPPD, PUT is a native function, unlike SQL db's.*
 

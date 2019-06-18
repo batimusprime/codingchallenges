@@ -40,14 +40,14 @@ function getInput(section){
     // create    
     if(section == "c"){
     
-        //c argument means create was clicked, call create func, r = read, etc.
+        //c argument means create button was clicked, call create func, r = read, etc.
         create(cText,dText,kText,vText);
 
     }
     //read
     else if (section == "r"){
-    
-        read(cText,dText,kText,vText);
+        
+        read(cText,dText);
         
 
     
@@ -55,7 +55,13 @@ function getInput(section){
     else if (section == "u"){
     
         update(cText,dText,kText,vText);
-    
+        //search
+        // if exists
+        //update
+        //display deltas
+        //if not exists
+        //notify
+        //create();
     }
     else if (section == "d"){
     
