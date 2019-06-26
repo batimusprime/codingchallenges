@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+    
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0" />
+        <meta http-equiv = "X-UA-Compatible" content = "ie=edge" />
+        <title>NRCS Reporting Stations</title>
+        <script src = "https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    
+    </head>
+
+    <body>
+        
+        
+        <div id="main">
+        
+        <table id="table">
+        <tr>
+        
+        <th>Station Name</th>
+        <th>Code</th>
+        <th>Elevation</th>
+        <th>Latitutde</th>
+        <th>Longitude</th>
+        <th>Year</th>
+        <th>County</th>
+        
+        </tr>
+        
+        
+        
+        </table>
+        
+        </div>
+        <script>
+        
+            async function getData(){
+            
+                //get response stream from loading csv
+                const response = await fetch('data/NRCSsites.csv');
+                
+                //when response received, assign text of the response to data
+                const data = await response.text();
+                
+                //parse data with split, remove first row (header)
+                const rows = data.split('\n').slice(1);
+                
+                //iterate over rows
+                rows.forEach(elt =>{
+                    
+                    //split each row at the comma
+                    const row = elt.split(',');
+                    
+                    //assign each column in order
+                    const name = row[0];
+                    
+                    const code = row[1];
+                    
+                    const elev = row[2];
+                    
+                    const lat = row[3];
+
+                    const long = row[4];
+                    
+                    const year = row[5];
+                    
+                    const county = row[6];
+                    
+                    //get this working then refactor
+                    document.getElementById('table').innerHTML += ('<tr><td><button id=\"' + code + '\" onClick = \"reply_click(this.id)\">' + name + '</button></td><td>' + code + '</td><td>' + elev + '</td><td>' + lat + '</td><td>' + long + '</td><td>' + year +'</td><td>' + county +'</td></tr>');
+                });
+                
+                
+            
+            };
+        
+            //execute function to parse data and display on page
+            getData();
+        
+     
+            //function called by button click, assign code for station as clicked_id
+            function reply_click(clicked_id){
+     
+                alert(clicked_id);
+      
+            }
+        
+        </script>
+
+
+<style>
+
+th{
+
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+td{
+
+    padding: .5rem;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+button{
+
+    min-width: 10rem;
+}
+li{
+
+    list-style: none;
+    text-decoration: none;
+}
+
+</style>
+
+       
+</body>
+
+</html>
