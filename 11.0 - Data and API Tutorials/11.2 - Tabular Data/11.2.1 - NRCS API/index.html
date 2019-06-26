@@ -1,298 +1,168 @@
 <!DOCTYPE html>
 <html lang = "en">
+
     <head>
     
         <meta charset = "UTF-8" />
         <meta name = "viewport" content = "width=device-width,initial-scale=1.0" />
         <meta http-equiv = "X-UA-Compatible" content = "ie=edge" />
-        <title>Tabular data - 11.2</title>
+        <title>NRCS Reporting Stations and Basins</title>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
         <script src = "https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    
     </head>
 
     <body>
-
-       <div id="container">
-       <h2>Historical Precipitation At:</h2><p id="location">Ebbetts Pass, CA</p>
-        <canvas id="myChart"></canvas>
         
-        <script>
-            //array of years / xlabels
-            const xlabels = [];
-            
-            //arrays of month data
-            const jan = [];
-            const feb = [];
-            const mar = [];
-            const apr = [];
-            const may = [];
-            const jun = [];
-            const jul = [];
-            const aug = [];
-            const sep = [];
-            const oct = [];
-            const nov = [];
-            const dec = [];
-            
-     
+                <h1>NRCS Snow Monitoring Stations and Basins</h1>
 
-            
+        <div id="main">
+
+        <table id="table">
+        <tr>
+        
+        <th>Site Name</th>
+        <th>Code</th>
+        <th>Elevation</th>
+        <th>Latitutde</th>
+        <th>Longitude</th>
+        <th>Year</th>
+        <th>County</th>
+        
+        </tr>
+        
+        
+        
+        </table>
+        
+        </div>
+        <script>
+            site_list = []
             async function getData(){
             
-            //get the csv, return as response, read text of response
-            const response = await fetch('data.csv');
-            const data = await response.text();
-//            console.log(data);
-      
-            
-            //splits the data at newlines, remove the first two columns which are for human readability
-            const table = data.split('\n').slice(2);
-      
-            table.forEach(row =>{
-            
-                //split columns at comma
-                const columns = row.split(',');
-//                console.log(columns);
+                //get response stream from loading csv
+                const response = await fetch('data/NRCSsites.csv');
                 
-                //get labels
-                const label = columns[0]
+                //when response received, assign text of the response to data
+                const data = await response.text();
                 
-                //push labels to array so they can be iterated over for chart
-                xlabels.push(label);
-                //main data array - jan
-                const janRow = columns[1];
-                jan.push(janRow); 
+                //parse data with split, remove first row (header)
+                const rows = data.split('\n').slice(1);
                 
-                //main data array - feb
-                const febRow = columns[2];
-                feb.push(febRow);
-                
-                //main data array - mar
-                const marRow = columns[3];
-                mar.push(marRow);
-                
-                //main data array - apr
-                const aprRow = columns[4];
-                apr.push(aprRow);
+                //iterate over rows
+                rows.forEach(elt =>{
+                    
+                    //split each row at the comma
+                    const row = elt.split(',');
+                    
+                    //assign each column to a variable in order from 0-6 for table display
+                    
+                    const name = row[0];
+                    
+                    const code = row[1];
+                    
+                    const elev = row[2];
+                    
+                    const lat = row[3];
 
-                //main data array - may
-                const mayRow = columns[5];
-                may.push(mayRow);
+                    const long = row[4];
+                    
+                    const year = row[5];
+                    
+                    const county = row[6];
+                    
+                    //display on page with dynamic table elements
+                    //get this working then refactor
+                    document.getElementById('table').innerHTML += ('<tr><td><button id=\"' + code + '\" onClick = \"reply_click(this.id)\">' + name + '</button></td><td>' + code + '</td><td>' + elev + '</td><td>' + lat + '</td><td>' + long + '</td><td>' + year +'</td><td>' + county +'</td></tr>');
+            
+                    //create list of sites and codes
+                    site_list.push({site_name: name,
+                    site_code: code});
+                    
+            
+                });
                 
-                //main data array - jun
-                const junRow = columns[6];
-                jun.push(junRow);
+                      
+            
+            };
+        
+            //execute function to parse data and display on page
+            getData();
+        
+     
+            //function called by button click, assign code for station as clicked_id
+            function reply_click(clicked_id){
+                console.log(clicked_id + " Was Clicked");
+                checkName(site_list, clicked_id);
+            };
+            
+            function checkName(site_list, clicked_id){
+            
+ 
+
+
+const result = site_list.find( fruit => site_list.site_name === clicked_id );
+
+console.log(result.site_name) 
+console.log(result.site_code) 
+            
+            };
                 
-                //main data array - jul
-                const julRow = columns[7];
-                jul.push(julRow);
+            
+            
  
-                //main data array - aug
-                const augRow = columns[8];
-                aug.push(augRow);
- 
-                //main data array - jul
-                const sepRow = columns[9];
-                sep.push(sepRow);
- 
-                //main data array - oct
-                const octRow = columns[11];
-                oct.push(julRow);
- 
-                //main data array - nov
-                const novRow = columns[13];
-                nov.push(novRow);
- 
-                //main data array - jul
-                const decRow = columns[15];
-                dec.push(decRow);
+        </script>
 
-              //end foreach
-              });
-              
-              
-              //end async func
-              }
-        
-        
-        
-        //async needed to wait for getData to complete
-        async function chartIt(){
-        
-        //get the data and wait for stream to complete
-        await getData();
-        //get the DOM element to display the chart
-        const ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    //params for chart
-    type: 'line',
-    
-    data: {
-        
-        labels: xlabels,
-        
-        
-        datasets: [{
-            label: 'January',
-            data: jan,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)'
-            ],
-            borderWidth: 1
-        },{
-            label: 'February',
-            data: feb,
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.2)',
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'March',
-            data: mar,
-            backgroundColor: [
-                'rgba(255, 206, 86, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 206, 86, 1)', 
-            ],
-            borderWidth: 1
-        },{
-            label: 'April',
-            data: apr,
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-            ],
-            borderColor: [
-                'rgba(75, 192, 192, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'May',
-            data: may,
-            backgroundColor: [
-                'rgba(153, 102, 255, 0.2)',
-            ],
-            borderColor: [
-                'rgba(153, 102, 255, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'June',
-            data: jun,
-            backgroundColor: [
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 159, 64, 1)'
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'July',
-            data: jul,
-            backgroundColor: [
-                'rgba(241, 66, 244, 0.2)',
-            ],
-            borderColor: [
-                'rgba(241, 66, 244, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'August',
-            data: aug,
-            backgroundColor: [
-                'rgba(270, 63, 191, 0.2)',
-            ],
-            borderColor: [
-                'rgba(270, 63, 191, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'September',
-            data: sep,
-            backgroundColor: [
-                'rgba(63, 191, 191, 0.2)',
-            ],
-            borderColor: [
-                'rgba(63, 191, 191, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'October',
-            data: oct,
-            backgroundColor: [
-                'rgba(63, 63, 191, 0.2)',
-            ],
-            borderColor: [
-                'rgba(63, 63, 191, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'November',
-            data: nov,
-            backgroundColor: [
-                'rgba(241, 104, 104, 0.2)',
-            ],
-            borderColor: [
-                'rgba(241, 104, 104, 1)',
-            
-            ],
-            borderWidth: 1
-        },{
-            label: 'December',
-            data: dec,
-            backgroundColor: [
-                'rgba(241, 241, 104, 0.2)',
-            ],
-            borderColor: [
-                'rgba(241, 241, 104, 1)',
-            
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-})
 
-};
-        //call main func    
-     chartIt();   
-</script>
-</div>
+<style>
 
-       <style>
-       #container{
+th{
+
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: .5rem solid black;
+}
+
+
+td{
+
+    padding: .5rem;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+button{
+
+    min-width: 10rem;
+}
+li{
+
+    list-style: none;
+    text-decoration: none;
+}
+
+h1{
+
+    text-align: center;
+
+}
+
+
+#main{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+
+}
+
+
+</style>
+
        
-            text-align: center; 
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding-left: 10rem;
-            padding-right: 10rem;
-       };
-       
-       </style>
-       
-    </body>
+</body>
 
 </html>
