@@ -47,12 +47,12 @@ ___All data provided by NRCS___
 
 ## TODO
 - [x] Get title from index.html and transfer to graph.html
-- [] Last updated date
+- [ ] Last updated date
 - [x] Fetch data with Python
-- [] Parse and clean data
-- [] Set Fetch to CRON job 1x /  month
-- [] Hosting
-- [] Expand to other states
-- [] Check for zero data years
-- [] Display information about site with link to data in NRCSsites.csv
+- [ ] Parse and clean data
+- [ ] Set Fetch to CRON job 1x /  month
+- [ ] Hosting
+- [ ] Expand to other states
+- [ ] Check for zero data years
+- [ ] Display information about site with link to data in NRCSsites.csv
 
