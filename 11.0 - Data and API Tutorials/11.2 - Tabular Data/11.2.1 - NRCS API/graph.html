@@ -12,7 +12,7 @@
     <body>
 
        <div id="container">
-       <h2>Historical Precipitation At:</h2><p id="location">Ebbetts Pass, CA</p>
+       <h2>Historical Precipitation At:</h2><p id="location"></p>
         <canvas id="myChart"></canvas>
         
         <script>
@@ -36,11 +36,11 @@
      
 
             
-            async function getData(){
+            async function getData(code){
             
-            //ENTER CORRECT FILE PATH HERE
+            //ON DEPLOY: ENTER CORRECT FILE PATH HERE 
             //get the csv, return as response, read text of response
-            const response = await fetch('/data/20H08_2019-06-26.csv');
+            const response = await fetch('/data/' + code + '.csv');
             const data = await response.text();
 //            console.log(data);
       
@@ -118,13 +118,19 @@
         
         
         //async needed to wait for getData to complete
-        async function chartIt(){
+        async function chartIt(loc, code){
         
         //get the data and wait for stream to complete
-        await getData();
+        await getData(code);
         //get the DOM element to display the chart
         const ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
+        //set title as H1 location
+        //replace removes URL space character
+        document.getElementById('location').innerHTML = (loc.replace(/%20/g, " ") + " , CA");
+
+        var myChart = new Chart(ctx, {
+        
+    
     //params for chart
     type: 'line',
     
@@ -277,12 +283,28 @@ var myChart = new Chart(ctx, {
 })
 
 };
-        //call main func    
-     chartIt();   
+          
+     function getSite(){  
+        //get variables from URL substring
+        const text = window.location.hash.substring(1)
+        
+        //assign as variables
+        const loc = (text.split('#')[1]);
+        const code = (text.split('#')[0]);
+        
+        //call chart function with selected site params
+        chartIt(loc, code); 
+
+     }
+        //call main func  
+        getSite();
+
 </script>
+
 </div>
 
        <style>
+       
        #container{
        
             text-align: center; 
