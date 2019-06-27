@@ -7,10 +7,6 @@
         <meta name = "viewport" content = "width=device-width,initial-scale=1.0" />
         <meta http-equiv = "X-UA-Compatible" content = "ie=edge" />
         <title>NRCS Reporting Stations and Basins</title>
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-        crossorigin="anonymous"></script>
         <script src = "https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     
     </head>
@@ -40,7 +36,6 @@
         
         </div>
         <script>
-            site_list = []
             async function getData(){
             
                 //get response stream from loading csv
@@ -76,12 +71,8 @@
                     
                     //display on page with dynamic table elements
                     //get this working then refactor
-                    document.getElementById('table').innerHTML += ('<tr><td><button id=\"' + code + '\" onClick = \"reply_click(this.id)\">' + name + '</button></td><td>' + code + '</td><td>' + elev + '</td><td>' + lat + '</td><td>' + long + '</td><td>' + year +'</td><td>' + county +'</td></tr>');
-            
-                    //create list of sites and codes
-                    site_list.push({site_name: name,
-                    site_code: code});
-                    
+                    document.getElementById('table').innerHTML += ('<tr><td><button name = \"' + name + '\" id=\"' + code + '\" onClick = \"reply_click(this.id, this.name)\">' + name + '</button></td><td>' + code + '</td><td>' + elev + '</td><td>' + lat + '</td><td>' + long + '</td><td>' + year +'</td><td>' + county +'</td></tr>');
+                              
             
                 });
                 
@@ -93,24 +84,13 @@
             getData();
         
      
-            //function called by button click, assign code for station as clicked_id
-            function reply_click(clicked_id){
+            //function called by button click, assign code for station as clicked_id and name as clicked_name
+            function reply_click(clicked_id, clicked_name){
                 console.log(clicked_id + " Was Clicked");
-                checkName(site_list, clicked_id);
+                console.log(clicked_name + " Was Clicked");
             };
             
-            function checkName(site_list, clicked_id){
-            
- 
-
-
-const result = site_list.find( fruit => site_list.site_name === clicked_id );
-
-console.log(result.site_name) 
-console.log(result.site_code) 
-            
-            };
-                
+                    
             
             
  

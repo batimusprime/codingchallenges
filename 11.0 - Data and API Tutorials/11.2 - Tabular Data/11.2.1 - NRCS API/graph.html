@@ -40,13 +40,14 @@
             
             //ENTER CORRECT FILE PATH HERE
             //get the csv, return as response, read text of response
-            const response = await fetch('/data/sample_data.csv');
+            const response = await fetch('/data/20H08_2019-06-26.csv');
             const data = await response.text();
 //            console.log(data);
       
             
             //splits the data at newlines, remove the first two columns which are for human readability
-            const table = data.split('\n').slice(2);
+            //slice 57 cannot be the best way to do this, but it works for now, removes the first 57 lines
+            const table = data.split('\n').slice(57);
       
             table.forEach(row =>{
             
@@ -285,12 +286,13 @@ var myChart = new Chart(ctx, {
        #container{
        
             text-align: center; 
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding-left: 10rem;
-            padding-right: 10rem;
+   
+            width: 80vw;
+            height: 40vh;
+            margin: 0 auto;
+
        };
+     
        
        </style>
        

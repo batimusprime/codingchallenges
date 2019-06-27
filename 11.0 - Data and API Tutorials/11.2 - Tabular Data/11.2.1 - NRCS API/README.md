@@ -31,6 +31,7 @@
 - [] Integrate auto-fetch of data with CRON jobs
 - [] Create API / documentation
 - [] Expand to other states
+- [] Check for zero data years
 
 ## Python Operations
 
