@@ -7,15 +7,19 @@ Classic implementation of Fizz Buzz
 *   JavaScript (*)
 *   Java (*)
 
-[1.0 - Fizz-Buzz](1_FizzBuzz)
-<hr>
+[1.0 - Fizz-Buzz](/1_FizzBuzz)
+
+---
+
 ### 1.A: Fizz-Buzz Extended
 Further demonstration of concept
 *   JavaScript / HTML / CSS
 
-[1.A - Fizz-Buzz Extended](1A_FizzBuzz_Extended)
-<hr>
-<hr>
+[1.A - Fizz-Buzz Extended](/1A_FizzBuzz_Extended)
+
+---
+---
+
 
 ## 2.0: Travelling Salesperson
 Classic implementation of algorithmic challenge
