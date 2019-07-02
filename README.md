@@ -9,13 +9,14 @@ Classic implementation of Fizz Buzz
 
 [1.0 - Fizz-Buzz](1_FizzBuzz)
 <hr>
-#### 1.A: Fizz-Buzz Extended
+### 1.A: Fizz-Buzz Extended
 Further demonstration of concept
 *   JavaScript / HTML / CSS
 
 [1.A - Fizz-Buzz Extended](1A_FizzBuzz_Extended)
 <hr>
 <hr>
+
 ## 2.0: Travelling Salesperson
 Classic implementation of algorithmic challenge
 
@@ -40,4 +41,4 @@ Following tutorial to make Flappy Bird game. Non-working, no plans to finish
 ### 4.0 Plinko
 Testing matter.js
 
-[4.0 - Plinko](/4_Plinko)
+[4.0 - Plinko](4_Plinko)
