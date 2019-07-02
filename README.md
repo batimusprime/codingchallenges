@@ -91,6 +91,7 @@ Demonstrates CRUD functions for firebase realtime database
 Non-working "The Office" themed trivia game
 
 + Javascript
+
 [7.0 - Trivia Time](7_Trivia_Time)
 
 ---
