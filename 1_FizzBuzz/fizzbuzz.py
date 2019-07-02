@@ -1,7 +1,7 @@
 ##################################
 # Name: github.com/batimusprime/
 # Date: 4/16/18
-# Program: ASCII showcase
+# Program: Coding Challenge 1.0
 # Purpose: 
 # Write a program that prints the numbers from 1 to 100. 
 # For multiples of three print 'Fizz' instead of the number
