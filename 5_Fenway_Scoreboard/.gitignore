@@ -1,0 +1,5 @@
+/dev/**
+/dev
+.firebaserc
+firebase.json
+/.firebase
