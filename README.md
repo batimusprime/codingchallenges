@@ -100,7 +100,7 @@ Non-working "The Office" themed trivia game
 
 ## 8.0 - NRCS API
 Natural Resources Conservation Service API
-Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California.
+Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. Data is automatically displayed in a graph using Chart.JS
 
 + Javascript
 + Python
