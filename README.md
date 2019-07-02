@@ -61,7 +61,18 @@ Built from scratch as a means to display baseball scores. Click to interact with
 +   CSS
 +   JavaScript / jQuery
 
-[4.0 - Plinko](4_Plinko)
+[5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
+
+---
+
+---
+### ~~6.0 - Side Scroller~~
+### 6.0 Firebase Wrapper
+API for interfacing with Firebase database
++ Python
++ Jupyter Notebook
+
+[4.0 - Plinko](6_Plinko)
 
 ---
 
