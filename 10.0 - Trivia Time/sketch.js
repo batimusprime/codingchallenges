@@ -1,6 +1,11 @@
 /*
 
-issues finding end of array, currently question disappears and error is thrown when end is reached and correct answer is entered again 
+Need to check for end of array and display new question text 
+
+i.e. if next step in array is empty display "no more fun"
+
+
+BIG PROBLEM ARRAY STARTS AT -1 WHY WHY WHY
 
 */
 
@@ -12,18 +17,20 @@ var andy;
 var angela;
 var creed;
 
+//initialize score
+var score = 1;
+
 //generic vars - refactor later
 var a,b,c,d,q;
-
-//create question/answer dictionary
-quest = {}
 
 //question iterator
 var i = 0;
 
+//question display number
+var j = 1;
+
 //question and answer ident
 var corAns = 1;
-
 
 //loads images
 function preload(){
@@ -54,12 +61,13 @@ function setup(){
     canvas.parent('main');
     
     //create new player, set icon and name
-    player = new Player(creed,"Stephen");
+    player = new Player(creed,"Stephen",0);
     
     //display new question
     question = new Question();
+    
+    
 }
-
 
 function draw(){
     
@@ -71,37 +79,53 @@ function draw(){
     
     //display question
     question.show(i);
+    
+    //display score
+    player.update(0);
 
 }
 
 //player constructor
-function Player(icon, name){
+function Player(icon, name, score){
 
     //player's name
     this.name = name;
     
     //duisplay icon and name
     this.show = function(){
-        
+           
         //image and text options
         image(icon,25,50);
         
         textSize(32);
         text(name, 10, 30);
-        fill(255, 255, 255);
-    }
+        fill(255, 255, 255); 
+        
+
+    };
     
+
+    
+    this.update = function(score){
+
+        //score
+        textSize(32);
+        text(score, 300, 30);
+        fill(255, 255, 255); 
+    
+    };
+
 }
 
 //question constructor
 function Question(){
 
     //display question
-    this.show = function(){
+    this.show = function(i){
     
-    //get question from array in push.js 
-    //increase question number display by one so no 0 is displayed
-    q = ("Question " + (i+1) + ": " + a[i].q);
+    //get question from array (a) in push.js 
+    //j is question number, i is index position in array. (j = i+1) should be true
+    q = ("Question " + j + ": " + a[i].q);
     
     //text options
     textSize(18);
@@ -111,40 +135,33 @@ function Question(){
     }
     
     //next question function
-    this.next = function(){
-    
-        i++
-    
+    this.next = function(ans){
+
+        index = a.indexOf(ans);
+        console.log(index);
+        
+
+//        if(i<a.length-1 && ans == a[i].a){
+//            j++;
+//            i++;
+//            player.update(score++);
+//        }else{
+//            console.log("end of array");
+//        
+//        }
     };
     
     //process answer
     this.answer = function(ans){
+        
+        console.log("Question: " + (j) + "/" + a.length + " Answer Submitted: " + ans + " Correct Answer: " + a[i].a + " Array Index: " + i + " Score: " + (score));
+        
+                        
+        question.next(ans);
+                    
+            
+        
     
-        console.log(ans)
-        
-        //test answer given by HTML button with answer in push.js
-        //idk why it doesnt work is comparing 0 to 1 on the first one
-        if(i<a.length-1){
-        
-            if(a[i].a == ans){
-        
-                console.log("correct")
-        
-                //increment the count, can probably remove the next() function and just increment here
-                question.next();
-        
-        }
-        
-        else{
-        
-            console.log(a.length + " " + i);
-        }        
-        }
-        //TODO: turn this into test question function
-        else {
-        
-            "bigest oof"
-        }
     }
-
 }
+  

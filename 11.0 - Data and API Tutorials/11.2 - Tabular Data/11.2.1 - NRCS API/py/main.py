@@ -38,6 +38,7 @@ for site in site_list:
 
         #page request
         page = urlopen(uri)
+        
         #change sleep=60 so as not to ddos / get kicked off server
         time.sleep(1)
         

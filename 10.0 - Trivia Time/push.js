@@ -7,9 +7,9 @@ var a = [];
 
 
 //dictionary for each question
-var q0 = {
-  
-  q: "The Question",
+
+var q0 ={
+  q: "The First Question",
   a: 1
 };
 
@@ -33,18 +33,25 @@ var q3 = {
 
 var q4 = {
   
-  q: "The Fifth Question",
+  q: "The End",
   a: 1
 };
 
 //display
 for (i=0;i<qcount;i++){
 
-//eval allows for dynamic creation of variable names
-a.push(eval("q"+i))
+    //eval allows for dynamic creation of variable names
+    a.push(eval("q"+i))
     
 }
-console.log(a)
+
+
+for (i=0;i<a.length;i++){
+
+
+    console.log(a[i].q + a.indexOf(i));
+}
+
 //for(i=0;i<a.length;i++){
 //console.log("this is the question: "  + a[i].q)
 //console.log("this is the answer: " + a[i].a)

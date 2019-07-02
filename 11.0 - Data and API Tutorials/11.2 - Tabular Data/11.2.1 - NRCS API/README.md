@@ -44,12 +44,15 @@ ___All data provided by NRCS___
 * Network connection
 * Chart.js 2.8.0+ (Delivered via CDN)
 * [ES6 supported browser](https://caniuse.com/#feat=es6)
+* Python 3.6.4
+* BeautifulSoup 4
+* Urllib
 
 ## TODO
 - [x] Get title from index.html and transfer to graph.html
 - [ ] Last updated date
 - [x] Fetch data with Python
-- [ ] Parse and clean data
+- [ ] Parse and clean data with regex
 - [ ] Set Fetch to CRON job 1x /  month
 - [ ] Hosting
 - [ ] Expand to other states

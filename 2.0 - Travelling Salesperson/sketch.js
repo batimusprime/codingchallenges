@@ -3,7 +3,7 @@ var totalCities = 5;
 var recordDistance;
 function setup(){
 
-createCanvas(400,300);
+createCanvas(800,600);
 
 // Create array with random vectors
 for (var i =0; i<totalCities;  i++){
@@ -45,7 +45,7 @@ function draw(){
   
   endShape();
   
-  stroke(255,0,122);
+  stroke(0,155,155);
   strokeWeight(4);
   noFill();
   

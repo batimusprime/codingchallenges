@@ -194,16 +194,22 @@ td{
 
     width: 50%;
 /*    border: 2px solid red;*/
-    font-size: 5rem;
+    font-size: 4rem;
+    text-align: center;
     font-family: 'Aldrich', sans-serif;
     transform: scale(1,1.8);
-    padding-top: 1rem;
+    padding-top: 1.6rem;
     /* you know what you've done*/
-    margin-left: -4rem;
+    margin-left: -2.5rem;
 
 
 }
 
+.ab_box{
+
+    border: 1px solid black;
+
+}
 span{
 
     font-size: 1.5rem;

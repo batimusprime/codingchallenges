@@ -226,7 +226,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 //create ref
-var ref = database.ref('last');
+var ref = database.ref('last_team');
 
 //.on with two callbacks
 ref.on('value', gotData, errData);
@@ -234,7 +234,7 @@ ref.on('value', gotData, errData);
 function gotData(data){
   
     //upon data change write to the dom element
-  $(".a_name").text(data.val());
+  $(".a_name").text(data.val().toUpperCase());
 }
 
 function errData(err){
