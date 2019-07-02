@@ -13,7 +13,7 @@ Classic implementation of Fizz Buzz
 Further demonstration of concept
 +   JavaScript / HTML / CSS
 
-[1.A - Fizz-Buzz Extended](/1_FizzBuzz/1A_FizzBuzz_Extended)
+[1.A - Fizz-Buzz Extended](/1_FizzBuzz/1A_Fizzbuzz_Extended)
 
 ---
 
