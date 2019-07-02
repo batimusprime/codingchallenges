@@ -97,3 +97,15 @@ Non-working "The Office" themed trivia game
 ---
 
 ---
+
+## 8.0 - NRCS API
+Natural Resources Conservation Service API
+Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California.
+
++ Javascript
++ Python
+[8.0 - NRCS API](8_NRCS_API)
+
+---
+
+---
