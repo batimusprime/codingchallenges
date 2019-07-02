@@ -8,9 +8,9 @@ Classic implementation of Fizz Buzz
 
 [1.0 - Fizz-Buzz](/1_FizzBuzz)
 
----
 
-## 1.A: Fizz-Buzz Extended
+
+### 1.1: Fizz-Buzz Extended
 Further demonstration of concept
 +   JavaScript / HTML / CSS
 
@@ -45,7 +45,7 @@ Following tutorial to make Flappy Bird game. Non-working, no plans to finish
 
 ---
 
-### 4.0 Plinko
+## 4.0 Plinko
 Testing matter.js, basic physics engine present
 +   JavaScript
 
@@ -55,7 +55,7 @@ Testing matter.js, basic physics engine present
 
 ---
 
-### 5.0 Fenway Scoreboard
+## 5.0 Fenway Scoreboard
 Built from scratch as a means to display baseball scores. Click to interact with cells
 
 +   CSS
@@ -67,12 +67,31 @@ Built from scratch as a means to display baseball scores. Click to interact with
 
 ---
 ### ~~6.0 - Side Scroller~~
-### 6.0 Firebase Wrapper
+## 6.0 - Firebase Wrapper
 API for interfacing with Firebase database
 + Python
 + Jupyter Notebook
 
-[4.0 - Plinko](6_Plinko)
+[6.0 - Firebase Wrapper](6_Firebase_Wrapper)
+
+### 6.1 - Firebase CRUD
+Demonstrates CRUD functions for firebase realtime database
++ Create
++ Read
++ Update
++ Delete
++ Javascript
+[6.1 - Firebase CRUD](6_Firebase_Wrapper_CRUD)
+
+---
+
+---
+
+## 7.0 - Trivia Time
+Non-working "The Office" themed trivia game
+
++ Javascript
+[7.0 - Trivia Time](7_Trivia_Time)
 
 ---
 
