@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -12,15 +13,11 @@
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
         
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
-
-
+  
         <!-- local files -->
-        <script src="/js/script.js"></script>
+        <script src="js/script.js"></script>
 
-        <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
 
     </head>
     
@@ -69,7 +66,7 @@
             <tr>
             
             <td class="a_pitch_disp">00</td>
-            <td colspan = "4" class="a_name"></td>
+            <td colspan = "4" id="a_name">NYY</td>
             <td class="a_inc inc" id="a0">0</td>
             <td class="a_inc inc" id="a1">0</td>
             <td class="a_inc inc" id="a2">0</td>
@@ -202,19 +199,26 @@
     <br/>
     <br/>
     
-    
-      <div id="control_button"><span id="x_button">=</span></div>
-    <div id="controls">
-  
-        <div id="pitcher_number" class="control">
-            <div id="away">
+         <div id="control_button">
+        
+        <span id="x_button">=</span>
+        
+        </div>
+     
+    <div id="controls" class="hidden">
+        
+   
+        
+        <div id="away">
             <span>Away Pitcher:</span>  
 
             <input type="number" id="a_pitch_num" name="a_pitcher_number" placeholder="00" step="1" min="00" max="99"/>
 
             <input type="button" value="Away Pitcher" id="a_pitch">
             </div>
+            
             <br/>
+            
             <div id="home">
             
             <span>Home Pitcher:</span>  
@@ -223,7 +227,9 @@
 
             <input type="button" value="Home Pitcher" id="h_pitch">
             </div>
+            
             <br/>
+            
             <div id="bat">
             
             <span>At Bat:</span>  
@@ -232,17 +238,30 @@
 
             <input type="button" value="At Bat" id="at_bat">
             </div>
-        </div>
 
-    <br/>
-    <div id="a_team" class="control">
-    
-    </div>
-    <br/>
-<div id="reset" class="control">
-    <input type="button" value="Reset Scores" id="reset">
-    </div>
-    </div><!--End controls-->
+            <br/>
+
+            <div id="a_team">
+            
+            <span>Away Team:</span>  
+
+            <input type="text" id="a_team_text" name="a_team_name" placeholder="NYY"/>
+
+            <input type="button" id="a_team_sub" value = "Away Team">
+            </div>
+            
+            <br/>
+            <div id="reset">
+            
+            <input type="button" value="Reset Scores" id="reset">
+        
+            </div>
+        
+        </div><!-- End Controls -->
+
+
+  
+
     </div><!-- End Wrapper -->
     </body>
 

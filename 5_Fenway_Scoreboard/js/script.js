@@ -70,6 +70,16 @@ var h_total = 0;
         }
     });  
     
+    //Set Away Team
+
+    $("#a_team_sub").click(function(){
+
+        var ateam = $("#a_team_text").val().toUpperCase();
+        
+        $("#a_name").text(ateam);
+
+    });
+    
     // Increments an individual score cell
     function increment($team){
     
@@ -210,70 +220,3 @@ r_sub.length = 0;
 };
 
 
-
-//import firebase data
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBA3BKgwWGa3-0P1w_PVkdZDBtgzqq06VE",
-    authDomain: "fenwayscore.firebaseapp.com",
-    databaseURL: "https://fenwayscore.firebaseio.com",
-    projectId: "fenwayscore",
-    storageBucket: "fenwayscore.appspot.com",
-    messagingSenderId: "39305187988"
-  };
-firebase.initializeApp(config);
-//initialize database
-
-var database = firebase.database();
-//create ref
-var ref = database.ref('last_team');
-
-//.on with two callbacks
-ref.on('value', gotData, errData);
-
-function gotData(data){
-  
-    //upon data change write to the dom element
-  $(".a_name").text(data.val().toUpperCase());
-}
-
-function errData(err){
-    console.log('Error' + err)
-  
-}
-
-//get home scores
-var ref1 = database.ref();
-
-ref1.on("value", function(snapshot) {
-   var h_score = snapshot.val();
-
-   //console.log(h_score.home.home_score0);
-   var h_0 = h_score.home.home_score0;
-   var h_1 = h_score.home.home_score1;
-   var h_2 = h_score.home.home_score2;
-   var h_3 = h_score.home.home_score3;
-   var h_4 = h_score.home.home_score4;
-   var h_5 = h_score.home.home_score5;
-   var h_6 = h_score.home.home_score6;
-   var h_7 = h_score.home.home_score7;
-   var h_8 = h_score.home.home_score8;
-   
-   
-   console.log(h_1)
-   //this is ineffective, for testing only
-   $("#h0").text(h_0);
-   $("#h1").text(h_1);
-   $("#h2").text(h_2);
-   $("#h3").text(h_3);
-   $("#h4").text(h_4);
-   $("#h5").text(h_5);
-   $("#h6").text(h_6);
-   $("#h7").text(h_7);
-   $("#h8").text(h_8);
-   
-    //total the home runs  
-    r_total("home")
-}, function (error) {
-   console.log("Error: " + error.code);
-});

@@ -1,6 +1,7 @@
 # Coding Challenges
 ## Demonstration of skills and concepts
 ----
+
 ## 1.0: Fizz-Buzz
 Classic implementation of Fizz Buzz
 +   Python
@@ -25,7 +26,7 @@ Classic implementation of algorithmic challenge
 
 >*"Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the origin city?"*
 
-More info: [Wikipedia - Travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 +   JavaScript
 
 [2.0 - Travelling Salesperson](2_TravellingSales)
@@ -45,6 +46,23 @@ Following tutorial to make Flappy Bird game. Non-working, no plans to finish
 ---
 
 ### 4.0 Plinko
-Testing matter.js
+Testing matter.js, basic physics engine present
++   JavaScript
 
 [4.0 - Plinko](4_Plinko)
+
+---
+
+---
+
+### 5.0 Fenway Scoreboard
+Built from scratch as a means to display baseball scores. Click to interact with cells
+
++   CSS
++   JavaScript / jQuery
+
+[4.0 - Plinko](4_Plinko)
+
+---
+
+---

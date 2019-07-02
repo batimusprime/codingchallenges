@@ -16,10 +16,9 @@ body{
 }
 #wrapper{
 
-    width: 75%;
-    margin: 0 auto;
-    text-align: center;
-     margin-top: 3rem;
+display: flex;
+align-items: center;
+flex-direction: column;
 }
 #scoreboard{
 
@@ -139,7 +138,7 @@ td{
 }
 
 
-.a_name{
+#a_name{
 
     
   font-size: 1.5rem;
@@ -260,23 +259,21 @@ span{
 #controls{
   
     background: rgba(255,255,255,.2);
-    width: 40%;
-    margin: 0 auto;
-    text-align: justify;
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
-    font-size: 1.5rem;
-
+    align-content: space-around;
+    max-width: 30rem;
+    text-align: center;
 
   
 }
+#control_button{
 
-.control{   
-
-    margin: 0 auto;
     text-align: center;
-    width: 70%
 
 }
+
 
 #x_button{
 
@@ -295,6 +292,6 @@ span{
 
 .hidden{
     
-    display: none;
+    display: none!important;
 
 }
