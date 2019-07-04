@@ -1,3 +1,8 @@
 /data/**
 /logs/**
 /py/__pycache__/
+firebase-init.js
+.firebaserc
+.firebase/**
+.firebase
+firebase.json

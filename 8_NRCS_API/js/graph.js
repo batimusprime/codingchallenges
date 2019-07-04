@@ -78,15 +78,15 @@
                 sep.push(sepRow);
  
                 //main data array - oct
-                const octRow = columns[11];
+                const octRow = columns[10];
                 oct.push(julRow);
  
                 //main data array - nov
-                const novRow = columns[13];
+                const novRow = columns[11];
                 nov.push(novRow);
  
                 //main data array - dec
-                const decRow = columns[15];
+                const decRow = columns[12];
                 dec.push(decRow);
 
               //end foreach
