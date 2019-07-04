@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang = "en">
+<head>
 
-    <head>
+    <!-- meta information -->
+    <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width=device-width,initial-scale=1.0" />
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge" />
+
+    <!-- title -->
+    <title>NRCS Snow Monitoring Sites and Basins</title>
+
+    <!-- Chart.JS via CDN -->
+    <script src = "https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+
+    <!-- local scripts for graph -->
+    <script src="script.js"></script>
+
+    <!-- CSS Stylesheet -->
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
     
-        <meta charset = "UTF-8" />
-        <meta name = "viewport" content = "width=device-width,initial-scale=1.0" />
-        <meta http-equiv = "X-UA-Compatible" content = "ie=edge" />
-        <title>NRCS Reporting Stations and Basins</title>
-        <script src = "https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-        <script src = "script.js"></script>
+    <!-- Table title-->
+    <h1>NRCS Snow Monitoring Stations and Basins</h1>
+
+    <div id="main">
+
+    <!-- main table, filled dynamically via script.JS -->
+    <table id="table">
     
-    </head>
+    <!-- First Row / Labels -->
+    <tr>
 
-    <body>
-        
-                <h1>NRCS Snow Monitoring Stations and Basins</h1>
-
-        <div id="main">
-
-        <table id="table">
-        <tr>
-        
         <th>Site Name</th>
         <th>Code</th>
         <th>Elevation</th>
@@ -28,72 +41,13 @@
         <th>Longitude</th>
         <th>Year</th>
         <th>County</th>
-        
-        </tr>
-        
-        
-        
-        </table>
-        
-        </div>
-        <script>
 
-            
-            
- 
-        </script>
+    </tr>
 
+    </table>
 
-<style>
+    </div>
 
-th{
-
-    text-align: center;
-    font-size: 1.5rem;
-    border-bottom: .5rem solid black;
-
-}
-
-
-td{
-
-    padding: .5rem;
-    border: 1px solid gray;
-    text-align: center;
-
-}
-
-button{
-
-    min-width: 10rem;
-
-}
-li{
-
-    list-style: none;
-    text-decoration: none;
-
-}
-
-h1{
-
-    text-align: center;
-
-}
-
-
-#main{
-
-    display: flex;
-    align-content: center;
-    justify-content: center;
-
-}
-
-
-</style>
-
-       
 </body>
 
 </html>

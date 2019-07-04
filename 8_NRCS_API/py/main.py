@@ -3,8 +3,9 @@
 Date: 6/26/2019
 Author: https://github.com/batimusprime
 Project: NRCS API
-Overview: Web scrapper to download snow reports from NRCS site
+Overview: Web scraper to download snow reports from NRCS site
 Note: Site_list has been commented out to 2 entries to support development
+
 """
 
 from bs4 import BeautifulSoup

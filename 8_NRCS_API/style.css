@@ -1,0 +1,55 @@
+
+th{
+
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: .5rem solid black;
+
+}
+
+
+td{
+
+    padding: .5rem;
+    border: 1px solid gray;
+    text-align: center;
+
+}
+
+button{
+
+    min-width: 10rem;
+
+}
+li{
+
+    list-style: none;
+    text-decoration: none;
+
+}
+
+h1{
+
+    text-align: center;
+
+}
+
+
+#main{
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+       
+#container{
+       
+    text-align: center; 
+    width: 80vw;
+    height: 40vh;
+    margin: 0 auto;
+
+};
+     
+       

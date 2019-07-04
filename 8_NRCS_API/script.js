@@ -46,9 +46,9 @@
             getData();
         
      
-            //function called by button click, assign code for station as clicked_id and name as clicked_name
+            //function called by button click, assign code for station as clicked_id and name as clicked_name, call URL with substrings in order to pass data
             function reply_click(clicked_id, clicked_name){
-                console.log(clicked_id + " " + clicked_name + " Was Clicked");
+
                 document.location.href=('/graph.html#' + clicked_id+'#' +clicked_name);
             };
             

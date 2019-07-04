@@ -36,9 +36,8 @@ More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org
 ---
 
 
-### ~~3.0 - Flappy Bird~~
-#### Non-Working
-Following tutorial to make Flappy Bird game. Non-working, no plans to finish
+### ~~3.0 - Flappy Bird~~ Non-Working
+Following tutorial to make nueral network powered Flappy Bird game. Non-working, no plans to finish
 +   JavaScript
 
 ---
@@ -75,7 +74,7 @@ API for interfacing with Firebase database
 [6.0 - Firebase Wrapper](6_Firebase_Wrapper)
 
 ### 6.1 - Firebase CRUD
-Demonstrates CRUD functions for firebase realtime database
+Demonstrates CRUD functions for Firebase realtime database
 + Create
 + Read
 + Update
@@ -104,6 +103,7 @@ Allows user to view historical SWE (Snow-Water Equivalent) data for all stations
 
 + Javascript
 + Python
+
 [8.0 - NRCS API](8_NRCS_API)
 
 ---
