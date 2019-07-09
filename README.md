@@ -66,21 +66,17 @@ Built from scratch as a means to display baseball scores. Click to interact with
 
 ---
 ### ~~6.0 - Side Scroller~~
-## 6.0 - Firebase Wrapper
-API for interfacing with Firebase database
-+ Python
-+ Jupyter Notebook
 
-[6.0 - Firebase Wrapper](6_Firebase_Wrapper)
 
-### 6.1 - Firebase CRUD
+### 6.0 - Firebase CRUD
 Demonstrates CRUD functions for Firebase realtime database
 + Create
 + Read
 + Update
 + Delete
 + Javascript
-[6.1 - Firebase CRUD](6_Firebase_Wrapper_CRUD)
+
+[6.0 - Firebase Wrapper](6_Firebase_Wrapper)
 
 ---
 

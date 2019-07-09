@@ -26,27 +26,27 @@ Collection
 
 - [x] Read
 
-- [x] Update -- note
+- [x] Update * note
 
-- [] Delete
+- [ ] Delete
 
-- [] Dynamic Config
+- [ ] Dynamic Config
 
-- [] Server confirmations not clientside
+- [ ] Server confirmations not clientside
 
-- [] UI / UX improvements
+- [ ] UI / UX improvements
 
-- [] Authentication
+- [ ] Authentication
 
-- [] Input validation
+- [ ] Input validation
 
-- [] Exception handling -> Status display
+- [ ] Exception handling -> Status display
 
-- [] Security best practices review
+- [ ] Security best practices review
 
-- [] Hosting
+- [ ] Hosting
 
-- [] ENV API key
+- [ ] ENV API key
 
 **update is sort of inherent since Firestore actually uses GPPD, PUT is a native function, unlike SQL db's.*
 
