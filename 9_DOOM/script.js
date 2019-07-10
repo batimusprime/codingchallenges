@@ -1,91 +1,50 @@
-//these are unknown variables
-let A;
-let n;
+//input date
 
-//the first algorithm to test
-function testA(A,n){
-  
-const w = n + (n/4)
-const x = w%7
-const answerA = x + A
+//run algorithm
 
-return answerA;
-
-};
-
-//the second algorithm to test
-function testB(A,n){
-  
-  const answerB = ((1.25*n)%7)+A
-  return answerB;
-  
-  
-}
-
-//test runner, returns answers as array [first,second]
-function runTest(A,n){
-    
-    //empty array
-    let answerArr = [];
-
-    //run test A
-    let resultA = testA(A,n);
-    
-    //run test B
-    let resultB = testB(A,n);
-    
-    //add answers to array
-    answerArr.push(resultA,resultB)
-    
-    //compare answers array;
-    compareResults(answerArr)
-}
-
-//compare the 2 answers
-function compareResults(ans){
-  
-  if (ans[1] == ans[0]){
-  
-    console.log("Match: TRUE : " + ans[0] + " - " + ans[1]);
-  
-  }else{
-    
-    console.log("Error")
-    
-  }
-}
+//return day of week as results
 
 
-//run the test testN # of times
+//test date, change to user input
+let t = "01-02-2013"
 
-function autoRun(testN){
+//split string at divider
+let n = t.split('-');
+
+//assign as variables
+let mon = n[0];
+
+let day = n[1];
+
+let lastTwo = n[2].slice(2);
+
+let fullYear = n[2]
+
+
+
+//find anchor day aka 2053 problem
+function findAnc(l){
     
-    //randomization of answers in array
-    let  firstRanArr = Array.from(Array(testN).keys()).map(i=>100+i*2);
-    
-    //straight 1-10 'range' function in array
-    let  secondRanArr = Array.from(Array(testN).keys()).map(i=>1+i);
-    
-    //empty array
-    let testParams = []
-    
-    //fill array
-    testParams.push(firstRanArr,secondRanArr);
-    
-    //run tests with arrays, iterate over each array with same for loop increment
-    //don't need to test against both lengths, find best practice
-    for (i=0;i<firstRanArr.length && i<secondRanArr.length; i++){
-    
-        console.log('testRun: ' + testParams[0][i] + ' ' + testParams[1][i]);
-        runTest(testParams[0][i],testParams[1][i]);
+    if (Math.round(l/4) == (l/4)){
         
-    
+        console.log('anchor day is 2');
+        return 2;
+        
+    }else if(Math.round(l/4) < (l/4)){
+        
+        console.log('anchor day is 0');
+        return 0;
+        
+    }else if((l/4).toFixed(1) == (l/4)){
+        
+        console.log('anchor day is 5');
+        return 5;
+    }else{
+        
+        console.log('anchor day is 3');
+        return 3;
     }
+
 }
 
-//call function to start process, arg = # of times to test
-autoRun(12);
-
-
-
-
+let anchor = findAnc(fullYear);
