@@ -1,46 +1,55 @@
-let sortedData = []
 
-            
+//get the data from the csv and return two arrays
 async function getData(){
-//await response from csv fetch, set text as variable data
-const response = await fetch('test.csv');
-const data = await response.text()
 
-//split the data into lines, and remove the first 54 lines which are the header
-let lines = data.split('\n').slice(54);
+    //get csv text
+    const response = await fetch('../data/test.csv');
+    const data = await response.text();
 
-//iterate through lines
-for (i=0;i<lines.length;i++){
+    //split by newline
+    let lines = data.split('\n').slice(54);
 
-    //split lines into date and data
-    let date = lines[i].toString().split(',');
-//    console.log(date[0]);
-//    console.log(date[1]);
+    //main for loop
+    for (let i=0;i<lines.length;i++){
 
-    //idk how this will affect performance
-    // can do this with less tests
-   if (date[1] == 0 || date[1] == undefined || date[1] == NaN || date[1] == ' '){}else{
-   
-   let dataobj = {
-    
-        date: date[0],
-        data: date[1]
-    
+
+        //split into date and data
+        let elem = lines[i].toString().split(',');
+        let date = elem[0];
+        let swe = elem[1];
+        
+        //check that data exists
+        if(swe == 0 || swe == ' ' || swe == undefined || swe == NaN ){
+
+            //no data
+
+        }else{
+
+            //push data to arrays
+            labels.push(date);
+            sweData.push(swe);
+       
+        }
     }
+
+};
+
+async function drawChart(){
+    //execute function and get data in 2 arrays (labels, sweData)
+    await getData();
+
+
     
-    sortedData.push(dataobj);
-//    console.log("line #: " + i + ": " + lines[i]);
-//}
+    //arguments defined in options.js
+    let myBarChart = new Chart(ctx, {
 
-}
+        type: type,
+        data: data,
+        options: options
+    
+    });
+
 };
-
-};
-
-
-getData();
-
-//need to iterate over object properties here
-
-let le = Object.keys(sortedData).length
-console.log(le);
+    
+//call main function
+drawChart();

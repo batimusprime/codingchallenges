@@ -1,0 +1,92 @@
+let sortedData = {}
+let iterator = 0;
+            
+async function getData(){
+//await response from csv fetch, set text as variable data
+const response = await fetch('../data/test.csv');
+const data = await response.text()
+
+//split the data into lines, and remove the first 54 lines which are the header
+let lines = data.split('\n').slice(54);
+
+
+//iterate through lines
+for (i=0;i<lines.length;i++){
+
+    //split lines into date and data
+    let date = lines[i].toString().split(',');
+//    console.log(date[0]);
+//    console.log(date[1]);
+
+    //idk how this will effect performance
+    //can do this with less tests
+   if (date[1] == 0 || date[1] == undefined || date[1] == NaN || date[1] == ' '){}else{
+
+   let dataobj = {
+        
+        date: date[0],
+        data: date[1]
+    
+    }
+    
+    sortedData.append(dataobj);
+    iterator++;
+    console.log(sortedData[iterator])
+    //    var showdata = (sortedData[i] + " - Total: " + iterator);
+//     let maindiv = document.getElementById('main');
+//     maindiv.innerHTML += showdata + '</br>';
+
+}
+};
+
+};
+
+
+getData();
+
+//chart.js data
+//get chart object
+// var ctx = document.getElementById('myChart').getContext('2d');
+
+//create new  chart object
+// var myChart = new Chart(ctx, {
+//    type: 'line',
+//    data: {
+//        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//        datasets: [{
+//            label: '# of Votes',
+//            data: [12, 19, 3, 5, 2, 3],
+//            backgroundColor: [
+//                'rgba(255, 99, 132, 0.2)',
+//                'rgba(54, 162, 235, 0.2)',
+//                'rgba(255, 206, 86, 0.2)',
+//                'rgba(75, 192, 192, 0.2)',
+//                'rgba(153, 102, 255, 0.2)',
+//                'rgba(255, 159, 64, 0.2)'
+//            ],
+//            borderColor: [
+//                'rgba(255, 99, 132, 1)',
+//                'rgba(54, 162, 235, 1)',
+//                'rgba(255, 206, 86, 1)',
+//                'rgba(75, 192, 192, 1)',
+//                'rgba(153, 102, 255, 1)',
+//                'rgba(255, 159, 64, 1)'
+//            ],
+//            borderWidth: 1
+//        }]
+//    },
+//    options: {
+//        scales: {
+//            xAxes: [{
+//                ticks: {
+//                    beginAtZero: true
+//                },
+//                type: 'time',
+//                time: {
+//                    unit: 'month'
+//                    
+//                }
+//            }]
+//        }
+// //    }
+// });

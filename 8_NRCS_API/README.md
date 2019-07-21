@@ -119,3 +119,9 @@ const firebaseConfig = {
 - [ ] Display information about site with link to data in NRCSsites.csv
 - [ ] Graphics
 - [ ] Project details on website
+- [ ] Node App
+- [ ] Sortable stats: 
+    - years w/ x inches
+    - display zeroes
+- [ ] Changeable types
+- [ ] Toggle colors
