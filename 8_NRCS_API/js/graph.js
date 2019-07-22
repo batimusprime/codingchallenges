@@ -26,6 +26,7 @@ async function getData(){
         }else{
 
             //push data to arrays
+            //push data to firebase here
             labels.push(date);
             sweData.push(swe);
             // console.log(date, swe);
@@ -58,7 +59,7 @@ const selector = window.location.hash.substring(1)
 
 //assign as variables
 const loc = (selector.split('#')[1]);
-const code = (selector.split('#')[0])
+const code = (selector.split('#')[0]);
 document.getElementById('location').innerHTML = (loc.replace(/%20/g, " ") + " , CA");
 
 //call main function
