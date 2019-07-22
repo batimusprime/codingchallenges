@@ -30,7 +30,7 @@ log.write('######\n# Retrieve operation started: ' + now.strftime('%Y-%m-%d %H:%
 for site in site_list:
     
     #create useable uri, add to list
-    uri_list.append('https://wcc.sc.egov.usda.gov/reportGenerator/view_csv/customGroupByMonthReport/monthly/'+ site + ':CA:SNOW%7Cid=%22%22%7Cname/POR_BEGIN,POR_END:1,2,3,4,5,6/WTEQ::collectionDate,SNWD::value,WTEQ::value')
+    uri_list.append('https://wcc.sc.egov.usda.gov/reportGenerator/view_csv/customMultiTimeSeriesGroupByStationReport/monthly/start_of_period/'+ site + ':CA:SNOW|id=""|name/POR_BEGIN,POR_END/WTEQ::value?fitToScreen=false')
     
     #this will run 289 server requests so be careful!!
     #for each uri in the list perform page request, save to file

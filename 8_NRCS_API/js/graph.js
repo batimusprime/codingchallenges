@@ -3,7 +3,8 @@
 async function getData(){
 
     //get csv text
-    const response = await fetch('../data/test.csv');
+    const response = await fetch('../data/' + code + '.csv');
+    console.log(code + '.csv');
     const data = await response.text();
 
     //split by newline
@@ -28,6 +29,7 @@ async function getData(){
             //push data to arrays
             labels.push(date);
             sweData.push(swe);
+            // console.log(date, swe);
        
         }
     }
@@ -51,5 +53,15 @@ async function drawChart(){
 
 };
     
+
+//get variables from URL substring
+const selector = window.location.hash.substring(1)
+
+//assign as variables
+const loc = (selector.split('#')[1]);
+const code = (selector.split('#')[0])
+document.getElementById('location').innerHTML = (loc.replace(/%20/g, " ") + " , CA");
+
 //call main function
 drawChart();
+

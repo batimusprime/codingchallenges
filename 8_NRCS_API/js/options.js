@@ -10,9 +10,9 @@ let ctx = document.getElementById('myChart').getContext('2d');
     
 //create a gradient, will wrap in function later
 let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-gradient.addColorStop(0, 'rgba(255,255,255,.1)');   
-gradient.addColorStop(.6, 'rgba(65,183,101,.5)');
-gradient.addColorStop(1, 'rgba(69,175,101,1)');
+gradient.addColorStop(0, 'rgba(0,128,255,.1)');   
+gradient.addColorStop(.5, 'rgba(0,128,255,.5)');
+gradient.addColorStop(1, 'rgba(255,255,255,.6)');
 
 let data = {
     labels: labels,
