@@ -3,8 +3,7 @@
 async function getData(){
 
     //get csv text
-    const response = await fetch('../data/' + code + '.csv');
-    console.log(code + '.csv');
+    const response = await fetch('../data/' + code + '.csv');;
     const data = await response.text();
 
     //split by newline

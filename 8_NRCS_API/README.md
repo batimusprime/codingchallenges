@@ -21,12 +21,16 @@
         - chart data (chartIt())
         - After viewing, return to station list / admin page (back button)
     
-### /js/script.js:
+### /js/main.js:
     
         - Display list of station information with clickable names
         - Click creates url with station code in appropriate location
         - Variables passed via URL to graph.html
     
+### /js/options.js:
+        - Dynamically set options for graph
+        - Establish empty containers for data (will remove with Firebase integration)
+        
 ### /logs/:
     - log_[YYYY-MM-DD].txt
         - as of now, only records retrieve operations
@@ -115,7 +119,7 @@ const firebaseConfig = {
 - [ ] Set Fetch to CRON job 1x /  month
 - [X] Hosting
 - [ ] Expand to other states
-- [ ] Check for zero data years
+- [x] Check for zero data years
 - [ ] Display information about site with link to data in NRCSsites.csv
 - [ ] Graphics
 - [ ] Project details on website
@@ -125,3 +129,5 @@ const firebaseConfig = {
     - display zeroes
 - [ ] Changeable types
 - [ ] Toggle colors
+- [ ] Significant events by year a.k.a. Sand County presentation method
+- [ ] Push sweData and labels to Firebase

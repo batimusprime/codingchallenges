@@ -6,3 +6,5 @@ firebase-init.js
 /.firebase
 /.firebase/**
 firebase.json
+.vscode/**
+.vscode
