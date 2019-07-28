@@ -110,10 +110,6 @@ eventually this will be a random index pulled from DB and the test will be uneed
         //display the user's piece
         rect(this.x, this.y, 50,80);
 
-  
-     
- 
-
     }
     
     //move the piece after a score, this is a correct answer
@@ -232,6 +228,8 @@ if (status == 'on'){
 }
 win(){
     
+    //move piece to final mark
+    user.x = 540;
     //set score to 10
     user.score = 10;
 
