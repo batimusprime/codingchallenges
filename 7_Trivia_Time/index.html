@@ -5,59 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
-<!--    <script src="push.js"></script>-->
-<!--    <script src="sketch.js"></script>-->
-
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
-
-
-<!--<script src="fbsave.js"></script>-->
-<script src="fbquest.js"></script>
-    
+ 
+    <!-- CSS Styles-->
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<style>
-html{
+    <div class="container">
+        <div class="container" id="userInfo">
+            <div class="stats" id="scoreLabel">SCORE: <span id="score">0</span></div>
+            <div class="stats" id="message">Message: UserName</div>
 
-    text-align: center;
-/*    padding-top: 20px;*/
+        </div>
+   </div>
 
-}
+   <!-- Buttons / controls-->
+   <div class="container" id="buttonContainer">
+    <button id="go" onclick = "game.go()">Go</button>
+   
+    <button id="reset" onclick = "user.reset()">Reset</button>
+ 
+   </div>
+    <!-- question text-->
+    <div class="container" id="questContainer">
 
-button{
-
-    width: 4rem;
-    height: 2rem;
-    margin: .5rem;
-}
-
-</style>
-<div id = "main"></div>
-<div id = "ans">
-<form method = "get">
-<button type = "button" onclick = "question.answer('1')">A</button>
-<button type = "button" onClick = "question.answer('2')">B</button>
-<button type = "button" onClick = "question.answer('3')">C</button>
-<button type = "button" onClick = "question.answer('4')">D</button>
-<button type = "button" onClick = "question.next();">Skip</button>
-
-</form>
-</div>
-
+            <div id="questText"></div>
+    
+        </div>
+   <!-- text for answers-->
+   <div class="container" id="ans0">
 
 
     </div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+   <div class="container" id="ans1">
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
+    </div>
+   <div class="container" id="ans2">
 
-</script>
+
+    </div>
+   <div class="container" id="ans3">
+
+
+    </div>
+    <div class="container">
+    <button id="a" onclick = "quest.answer(this.id)">A</button>
+    <button id="b" onclick = "quest.answer(this.id)">B</button>
+    <button id="c" onclick = "quest.answer(this.id)">C</button>
+    <button id="d" onclick = "quest.answer(this.id)">D</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+
+    <script src="sketch.js"></script>
 </body>
 </html>
