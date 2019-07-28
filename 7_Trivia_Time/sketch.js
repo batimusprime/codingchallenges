@@ -3,6 +3,7 @@ let message = document.getElementById('message');
 let scoreDisp = document.getElementById('score');
 let questText = document.getElementById('questText');
 let index = 0;
+
 function setup(){
 
 
