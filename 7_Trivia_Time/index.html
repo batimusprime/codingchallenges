@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
- 
     <!-- CSS Styles-->
     <link href="styles.css" type="text/css" rel="stylesheet"/>
+
 </head>
+
 <body>
+
+    <!-- Status bar-->
     <div class="container">
+
         <div class="container" id="userInfo">
+            
             <div class="stats" id="scoreLabel">SCORE: <span id="score">0</span></div>
+            
             <div class="container">
-            
+    
                 <div class="stats" id="message">Message:</div>
+    
                 <div class="stats" id="uName">UserName</div>
-            
+    
             </div>
-        </div>
-   </div>
-
-   <!-- Buttons / controls-->
-   <div class="container" id="buttonContainer">
-    <button id="go" onclick = "newGame()">Go</button>
-   
-    <button id="reset" onclick = "game.reset()">Reset</button>
- 
-   </div>
-    <!-- question text-->
-    <div class="container" id="questContainer">
-
-            <div id="questText"></div>
     
         </div>
-   <!-- text for answers-->
-   <div class="container" id="ans0">
-
-
+    
     </div>
-   <div class="container" id="ans1">
-
-
-    </div>
-   <div class="container" id="ans2">
-
-
-    </div>
-   <div class="container" id="ans3">
-
-
-    </div>
+    
+    <!-- Buttons / controls-->
     <div class="container">
-    <button id="a" onclick = "game.answer(this.id)">A</button>
-    <button id="b" onclick = "game.answer(this.id)">B</button>
-    <button id="c" onclick = "game.answer(this.id)">C</button>
-    <button id="d" onclick = "game.answer(this.id)">D</button>
+    
+        <button id="go" onclick = "newGame()">Go</button>
+    
+        <button id="reset" onclick = "game.reset()">Reset</button>
+    
     </div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
-
+    
+    <!-- question text-->
+    <div class="container" id="questContainer">
+    
+        <div id="questText"></div>
+    
+    </div>
+    
+    <!-- containers for answer text-->
+    <div class="container" id="ans0">
+    
+    </div>
+    
+    <div class="container" id="ans1">
+    
+    </div>
+    
+    <div class="container" id="ans2">
+    
+    </div>
+    
+    <div class="container" id="ans3">
+    
+    </div>
+    
+    <!-- Button container-->
+    <div class="container">
+    
+        <button id="a" onclick = "game.answer(this.id)">A</button>
+    
+        <button id="b" onclick = "game.answer(this.id)">B</button>
+    
+        <button id="c" onclick = "game.answer(this.id)">C</button>
+    
+        <button id="d" onclick = "game.answer(this.id)">D</button>
+    
+    </div>
+    
+    <!-- Firebase -->   
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
-
+    
+    <!-- Custom JS-->
+    <script src="fire-sketch.js"></script>
     <script src="sketch.js"></script>
+    
+</div><!-- end main container-->
+
 </body>
+
 </html>
+

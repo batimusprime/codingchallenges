@@ -7,17 +7,6 @@ let uName = document.getElementById('uName');
 //game status off || on
 let status = 'off';
 
-//firebase config
-const firebaseConfig = {
-    apiKey: "AIzaSyA4ozSR4A-Ne_br-DV7LODjuSEwYfWUImY",
-    authDomain: "fitorbullshit.firebaseapp.com",
-    databaseURL: "https://fitorbullshit.firebaseio.com",
-    projectId: "fitorbullshit",
-    storageBucket: "fitorbullshit.appspot.com",
-    messagingSenderId: "384742724151",
-    appId: "1:384742724151:web:53a172de7875eede"
-};
-
 //p5 setup: runs once
 function setup(){
 
@@ -175,7 +164,7 @@ go(){
 
     //create new question object
     let quest = new Question(1,'Question text goes here',['answer1','answer2','answer3','answer4'],'d');
-
+ 
     //display user name and initial message
     message.innerHTML = 'Let\'s Go!';    
 
