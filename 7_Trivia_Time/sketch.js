@@ -2,8 +2,16 @@
 let message = document.getElementById('message');
 let scoreDisp = document.getElementById('score');
 let questText = document.getElementById('questText');
-let index = 0;
-
+let status = 'off';
+const firebaseConfig = {
+    apiKey: "AIzaSyA4ozSR4A-Ne_br-DV7LODjuSEwYfWUImY",
+    authDomain: "fitorbullshit.firebaseapp.com",
+    databaseURL: "https://fitorbullshit.firebaseio.com",
+    projectId: "fitorbullshit",
+    storageBucket: "fitorbullshit.appspot.com",
+    messagingSenderId: "384742724151",
+    appId: "1:384742724151:web:53a172de7875eede"
+  };
 function setup(){
 
 
@@ -18,7 +26,6 @@ user  = new User('Default');
 
 //create new game object, used for game status events
 quest = new Question(1,'Question text goes here',['answer1','answer2','answer3','answer4'],'d')
-game = new Game();
 
 };
 //end setup
@@ -50,23 +57,9 @@ class Question{
         //correct answer [a-d]
         this.corr = corr;
 
+
     }
-    //answer function
-    answer(ansId){
-        if(game.status == true){
-            message.innerHTML = 'Game is go! </br>' + user.userName;
-
-        }else{
-        //wrong answer
-        
-        message.innerHTML = 'Game is not go! </br>' + user.userName;
-    }
-
-
-}
-
     show(){
-        this.status = true;
         //display the question text with an index # bullet
         questText.innerHTML = ('Question #' + this.index + ': ' + this.text);
         
@@ -83,7 +76,7 @@ new question object, keeps questions under 10 otherwise question number keeps sc
 eventually this will be a random index pulled from DB and the test will be uneeded
 
 */
-        if(quest.index < 10){
+        if(quest.index < 11){
         quest = new Question(this.index + 1,'Question text goes here',['answer1','answer2','answer3','answer4'],'d');
         
         //display question and answer text
@@ -124,58 +117,37 @@ eventually this will be a random index pulled from DB and the test will be uneed
     }
     
     //move the piece after a score, this is a correct answer
-    move(){
+    corr(){
     
     //display status message
     message.innerHTML = 'Correct </br> ' + this.userName;
 
 
     //keep score under 10
-    if(this.score < 10){
-    //increment score
-    this.score++;
+    if(this.score < 9){
+        //increment score
+        this.score++;
+        
         //move the piece on the x axis
         this.x += 53;
         scoreDisp.innerHTML = this.score;
-
-        //check if avatar is off canvas
-    }else if (this.score == 10 && this.x < 350){
-
-            message.innerHTML = user.userName + ' </br> WINS!!';
-            this.x += 53;
-        }else{
-
-
-        }
-        //next question
-        quest.next();
         
+        //next question
+         quest.next();
+
+    }else if (this.score == 10){
+
+
+        game.win();
+
+    }else{
+
+        console.log('game is not go: user.corr func')
+    }
     }
     
     //set the piece back to 0
-    reset(){
-
-        //reset status message
-        message.innerHTML = 'Message: UserName';
-        //original coordinate
-        this.x = 7;
-        //zero score
-        this.score = 0;
-        //display zero score
-        scoreDisp.innerHTML = 0;
-        //reset answers
-        for (let j=0;j<4;j++){
-
-            let ansClear = document.getElementById('ans' + j);
-            ansClear.innerHTML = ''
-
-        }
-        questText.innerHTML = ''
-
-        //turn game status to off
-        quest.status = false;
-    }
-
+    
     wrong(){
         
         message.innerHTML = 'Wrong </br>' + user.userName;
@@ -186,8 +158,6 @@ eventually this will be a random index pulled from DB and the test will be uneed
 class Game{
 
     constructor(){
-
-        this.status = true;
 
     }
     go(){
@@ -200,6 +170,96 @@ class Game{
     scoreDisp.innerHTML = user.score;
     //display question text
     quest.show();
+    status = 'on';
 
     }
+    reset(){
+
+        //reset status message
+        message.innerHTML = 'Message: UserName';
+        //original coordinate
+        user.x = 7;
+        //zero score
+        user.score = 0;
+        //display zero score
+        scoreDisp.innerHTML = 0;
+        //reset answers
+        for (let j=0;j<4;j++){
+
+            let ansClear = document.getElementById('ans' + j);
+            ansClear.innerHTML = ''
+
+        }
+        questText.innerHTML = ''
+
+        //turn game status to off
+        status = 'off';
+
+        //reset question index
+        quest.index = 1;
+    }
+
+//answer function
+answer(ansId){
+
+//check game status
+if (status == 'on'){ 
+
+    //check score
+    if (user.score < 9){
+        //check answer correctness
+         if(quest.corr == ansId){
+
+            user.corr();
+            console.log('correct answer', user.score);
+
+        }else{
+
+             user.wrong();
+
+        }
+
+    }else{
+        game.win();
+}
+}else{
+
+    console.log('game is not go: game.answer func');
+
+}
+
+
+}
+win(){
+    
+    //set score to 10
+    user.score = 10;
+
+    //display score
+    scoreDisp.innerHTML = user.score;
+
+    //display status message
+    message.innerHTML = user.userName + ' </br> WINS!!';
+
+}
+
+};
+
+function newGame(){
+
+    //check game status
+    if (status == 'off'){
+ //if it does not exist, create new game
+ game = new Game(true);
+ game.go();
+
+    }else{
+       
+       
+        console.log('game is already go: newGame func');
+
+      
+
+    }
+
 }

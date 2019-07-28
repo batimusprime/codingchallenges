@@ -20,9 +20,9 @@
 
    <!-- Buttons / controls-->
    <div class="container" id="buttonContainer">
-    <button id="go" onclick = "game.go()">Go</button>
+    <button id="go" onclick = "newGame()">Go</button>
    
-    <button id="reset" onclick = "user.reset()">Reset</button>
+    <button id="reset" onclick = "game.reset()">Reset</button>
  
    </div>
     <!-- question text-->
@@ -49,11 +49,15 @@
 
     </div>
     <div class="container">
-    <button id="a" onclick = "quest.answer(this.id)">A</button>
-    <button id="b" onclick = "quest.answer(this.id)">B</button>
-    <button id="c" onclick = "quest.answer(this.id)">C</button>
-    <button id="d" onclick = "quest.answer(this.id)">D</button>
+    <button id="a" onclick = "game.answer(this.id)">A</button>
+    <button id="b" onclick = "game.answer(this.id)">B</button>
+    <button id="c" onclick = "game.answer(this.id)">C</button>
+    <button id="d" onclick = "game.answer(this.id)">D</button>
     </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
