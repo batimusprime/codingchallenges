@@ -67,7 +67,7 @@ Built from scratch as a means to display baseball scores. Click to interact with
 ---
 ### ~~6.0 - Side Scroller~~
 ## 6.0 - Firebase Wrapper
-API for interfacing with Firebase database
+Front end for interfacing with Firebase database
 + Python
 + Jupyter Notebook
 
@@ -98,7 +98,7 @@ Non-working "The Office" themed trivia game
 ---
 
 ## 8.0 - NRCS API
-Natural Resources Conservation Service API
+Natural Resources Conservation Service Visualization API
 Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. Data is automatically displayed in a graph using Chart.JS
 
 + Javascript

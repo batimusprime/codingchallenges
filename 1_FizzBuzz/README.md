@@ -7,3 +7,5 @@
 ### For numbers which are multiples of both three and five print 'FizzBuzz'.
 ---
 ### Completed using Python 3.4.3
+### Completed using VBA Script  
+### Completed using JavaScript  
