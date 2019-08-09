@@ -5,7 +5,12 @@ R - GET / Read: Done
 U - PUT / Update:
 D - DELETE / Delete:
 */
+/*
+Remove API Key, (they are public, but no reason to store them here)
+*/
 
+let apiKey = 0;
+let appId = 0;
 //global variables
 //get status object as variable
 var display = document.getElementById("status");
@@ -21,6 +26,17 @@ var firebaseConfig = {
     appId: "1:533601056474:web:2f73d1173cc79304"
   };
 
+
+
+    apiKey: apiKey,
+//    authDomain: "trivia-time-d6aa3.firebaseapp.com",
+    databaseURL: "https://trivia-time-d6aa3.firebaseio.com",
+    projectId: "trivia-time-d6aa3",
+    storageBucket: "trivia-time-d6aa3.appspot.com",
+//    messagingSenderId: "556461021563",
+//     appId: appId
+
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
