@@ -7,6 +7,12 @@ let uName = document.getElementById('uName');
 //game status off || on
 let status = 'off';
 
+//global db variables
+let dbA = [];
+let dbCorr = '';
+let dbQText = '';
+let dbIndex = '';
+
 //p5 setup: runs once
 function setup(){
 
@@ -19,7 +25,7 @@ function setup(){
     user  = new User('Default');
 
     //create new game object, used for game status events
-    quest = new Question(1,'Question text goes here',['answer1','answer2','answer3','answer4'],'d')
+    quest = new Question(dbIndex,dbQText,dbA,dbCorr);
 
 };
 
@@ -50,9 +56,6 @@ class Question{
     //quest.show: displays question and answer text
     show(){
 
-        //create new question
-        quest = new Question(this.index,'Question text goes here',['answer1','answer2','answer3','answer4'],'d');
-        
         //display the question text with an index # bullet
         questText.innerHTML = ('Question #' + this.index + ': ' + this.text);
         
@@ -156,119 +159,118 @@ class User{
 
 class Game{
 
-constructor(){
-}
-
-//game.go: starts game
-go(){
-
-    //create new question object
-    let quest = new Question(1,'Question text goes here',['answer1','answer2','answer3','answer4'],'d');
- 
-    //display user name and initial message
-    message.innerHTML = 'Let\'s Go!';    
-
-    //display score
-    scoreDisp.innerHTML = user.score;
-
-    //display question text
-    quest.show();
-
-    //set game status to on
-    status = 'on';
-
-}
-
-//game.reset: resets game and variables
-reset(){
-
-    //reset status message
-    message.innerHTML = 'Message: ';
-
-    //original coordinate
-    user.x = 7;
-    
-    //zero score
-    user.score = 0;
-    
-    //display zero score
-    scoreDisp.innerHTML = 0;
-    
-    //reset answers
-    for (let j=0;j<4;j++){
-        
-        let ansClear = document.getElementById('ans' + j);
-        ansClear.innerHTML = ''
-    
+    constructor(){
     }
-    
-    //zero question display
-    questText.innerHTML = '';
 
-    //turn game status to off
-    status = 'off';
-    
-    //reset question index
-    quest.index = 1;
+    //game.go: starts game
+    go(){
 
-}
+        //create new question object
+        quest = new Question(dbIndex,dbQText,dbA,dbCorr);
+        //display user name and initial message
+        message.innerHTML = 'Let\'s Go!';    
 
-//answer function
-answer(ansId){
+        //display score
+        scoreDisp.innerHTML = user.score;
 
-    //check game status
-    if (status == 'on'){ 
+        //display question text
+        quest.show();
+
+        //set game status to on
+        status = 'on';
+
+    }
+
+    //game.reset: resets game and variables
+    reset(){
+
+        //reset status message
+        message.innerHTML = 'Message: ';
+
+        //original coordinate
+        user.x = 7;
         
-        //check score
-        if (user.score < 9){
-    
-            //check answer correctness
-            if(quest.corr == ansId){
+        //zero score
+        user.score = 0;
+        
+        //display zero score
+        scoreDisp.innerHTML = 0;
+        
+        //reset answers
+        for (let j=0;j<4;j++){
+            
+            let ansClear = document.getElementById('ans' + j);
+            ansClear.innerHTML = ''
+        
+        }
+        
+        //zero question display
+        questText.innerHTML = '';
+
+        //turn game status to off
+        status = 'off';
+        
+        //reset question index
+        quest.index = 1;
+
+    }
+
+    //answer function
+    answer(ansId){
+     
+        //check game status
+        if (status == 'on'){ 
+            
+            //check score
+            if (user.score < 9){
                 
-                //correct answer
-                user.corr();
-    
+                //check answer correctness
+                if(quest.corr == ansId){
+                    
+                    //correct answer
+                    user.corr();
+        
+                }else{
+        
+                    //wrong answer
+                    user.wrong();
+        
+                }
+        
             }else{
-    
-                //wrong answer
-                user.wrong();
-    
+
+                //game winner
+                game.win();
+        
             }
-    
+        
         }else{
 
-            //game winner
-            game.win();
-    
+            //game status is off
+            console.log('game is not go: game.answer func');
+        
         }
-    
-    }else{
 
-        //game status is off
-        console.log('game is not go: game.answer func');
-    
     }
 
-}
+    //user.win: when score = 10
+    win(){
 
-//user.win: when score = 10
-win(){
+        //move piece to final mark
+        user.x = 538;
 
-    //move piece to final mark
-    user.x = 538;
-
-    //set score to 10
-    user.score = 10;
-    
-    //display score
-    scoreDisp.innerHTML = user.score;
-    
-    //display status message
-    message.innerHTML = 'WINS!!';
+        //set score to 10
+        user.score = 10;
+        
+        //display score
+        scoreDisp.innerHTML = user.score;
+        
+        //display status message
+        message.innerHTML = 'WINS!!';
 
 }
 
-};//end user
+};//end game object
 
 //start game
 function newGame(){
@@ -288,3 +290,45 @@ function newGame(){
     }
 
 }
+//firebase config
+const firebaseConfig = {
+    apiKey: "AIzaSyA4ozSR4A-Ne_br-DV7LODjuSEwYfWUImY",
+    authDomain: "fitorbullshit.firebaseapp.com",
+    databaseURL: "https://fitorbullshit.firebaseio.com",
+    projectId: "fitorbullshit",
+    storageBucket: "fitorbullshit.appspot.com",
+    messagingSenderId: "384742724151",
+    appId: "1:384742724151:web:53a172de7875eede"
+  };
+
+
+  firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();
+
+var docRef = db.collection("question").doc('0');
+
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+        
+        const data = doc.data();
+        
+        // console.log("Document data:", doc.data());
+        // console.log("Question text:", data.text);
+        // for (i=0;i<4;i++){
+        // console.log("Answer " + i + ": " + data.answer[i]);
+        // }
+        // console.log("Correct answer:", data.correct);
+        dbQText = data.text;
+        dbA = data.answer;
+        dbCorr = data.correct;
+        dbIndex = data.index;
+        console.log(dbIndex,dbQText,dbA,dbCorr);
+    
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
