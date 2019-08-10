@@ -1,0 +1,40 @@
+score = 0
+score to win = 10
+
+
+display user info (right hand side of screen)
+
+userName
+score
+
+
+
+display gameboard
+
+Character
+Space 0
+Space 1
+...
+Space 10
+
+
+
+question board
+
+
+
+answer board
+
+button 1
+
+button 2
+
+button 3
+
+button 4
+
+
+controls
+start
+reset 
+next

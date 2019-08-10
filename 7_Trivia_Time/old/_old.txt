@@ -1,0 +1,118 @@
+/Get reference to FB object
+var database = firebase.database();
+
+function fbPush(user, displayName, userScore, imageId){
+
+firebase.database().ref('users/' + user).set({
+userId: user,
+username: displayName,
+score: userScore,
+pictureId : imageId
+});
+};
+
+function fbPull(){
+
+var ref = firebase.database().ref();
+
+ref.on("value", function(snapshot) {
+   
+   val = snapshot.val().users[user];
+   
+   console.log("User Id: " + val.userId);
+   console.log("User Display Name: " + val.username);
+   console.log("Score: " + val.score);
+   console.log("Profile Picture: " + val.pictureId);
+   
+   
+      
+}, function (error) {
+   console.log("Error: " + error.code);
+});
+
+}
+//
+//fbPush(user,"Stephen",0,"andy");
+//fbPull();
+
+
+//Firebase configuration
+const firebaseConfig = {
+   apiKey: "AIzaSyA4ozSR4A-Ne_br-DV7LODjuSEwYfWUImY",
+   authDomain: "fitorbullshit.firebaseapp.com",
+   databaseURL: "https://fitorbullshit.firebaseio.com",
+   projectId: "fitorbullshit",
+   storageBucket: "fitorbullshit.appspot.com",
+   messagingSenderId: "384742724151",
+   appId: "1:384742724151:web:53a172de7875eede"
+ };
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+let database = firebase.database();
+
+let userId = 'Batman';
+let questionId = 1;
+function writeUserData(userId, name, email, img) {
+firebase.database().ref('users/' + userId).set({
+   username: name,
+   email: email,
+   pic : img
+ }, function(error) {
+   if (error) {
+     // The write failed...
+     console.log('The write failed...', error);
+   } else {
+     // Data saved successfully!
+     console.log('Data saved successfully!');
+   }
+ });
+}
+
+//save data to the database
+// writeUserData('Batman','S','example@email','/andy.png');
+
+
+//read user data from database
+function readUserData(userId){
+
+  firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  
+    let retrUsername = (snapshot.val().username);
+    let retrEmail = (snapshot.val().email);
+    let retrImg = (snapshot.val().pic);
+    let idDiv = document.getElementById('userId');
+    let nameDiv = document.getElementById('userName');
+    let emailDiv = document.getElementById('userEmail');
+    let imgDiv = document.getElementById('avatar');
+
+
+    idDiv.innerHTML += userId;
+    nameDiv.innerHTML += retrUsername;
+    emailDiv.innerHTML += retrEmail;
+    imgDiv.innerHTML += '<img src=\'img/'+retrImg + '\'>'
+
+
+});
+};
+readUserData(userId);
+
+//read questions from db
+function getData(){
+let ref = firebase.database()
+
+  ref.once("value", function(data) {
+    // do some stuff once
+    console.log()
+  });
+  
+
+}
+
+  
+
+getData();
+
+
+console.log(question)

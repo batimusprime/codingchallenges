@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    
+    <button id="showCreate" onclick = 'createShow()'>Show Create</button>
+    <div id="create">
+
+            <label>Question Index #</label>
+            <input type="text" id="questionIndex">
+
+        </br>
+            <label>Question Text</label>
+        <input type="text" id="questionText">
+
+    </br>
+        <label>Answer A</label>
+        <input type="text" id="answerA">
+
+    </br>
+        <label>Answer B</label>
+        <input type="text" id="answerB">
+
+    </br>
+        <label>Answer C</label>
+        <input type="text" id="answerC">
+
+    </br>
+        <label>Answer D</label>
+        <input type="text" id="answerD">
+
+    </br>
+        <label>Correct Answer</label>
+        <input type="text" id="correct">
+
+    </br>
+        <button id="submitCreate" onclick ="submitInfo()">Submit</button>
+    </div>
+<script>
+    function submitInfo(){
+    
+        //get text from inputs
+        let questionIndex = document.getElementById('questionIndex').value;
+        let questionText = document.getElementById('questionText').value;
+        let correct = document.getElementById('correct').value;
+        console.log(questionIndex);
+        console.log(questionText);
+        console.log(correct);
+        
+        //push answers to array
+        let answersArr = [];
+        answersArr.push(document.getElementById('answerA').value);
+        answersArr.push(document.getElementById('answerB').value);
+        answersArr.push(document.getElementById('answerC').value);
+        answersArr.push(document.getElementById('answerD').value);
+    
+        console.log(answersArr);
+    };
+    
+    </script>
+</body>
+</html>
