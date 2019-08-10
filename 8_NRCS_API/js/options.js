@@ -1,6 +1,6 @@
-//declare empty arrays
-let labels = []
-let sweData = []
+//options.js below
+let labels = [];
+let sweData = [];
 
 //set border color
 let borderColor = 'rgba(0, 0, 0, .5)';
@@ -65,8 +65,20 @@ let options = {
     }
 }
 
-
 //type of chart
 //bar || line
 let type = 'line';
 
+//firebase options
+
+//Firebase configuration
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAkDwyY4u8FyGkqr7B4K3bGnd9hy4Jwjao",
+    authDomain: "nrcsgraphs.firebaseapp.com",
+    databaseURL: "https://nrcsgraphs.firebaseio.com",
+    projectId: "nrcsgraphs",
+    storageBucket: "nrcsgraphs.appspot.com",
+    messagingSenderId: "946223386871",
+    appId: "1:946223386871:web:6f8e0aab92f84b2c"
+  };

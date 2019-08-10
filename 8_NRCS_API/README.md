@@ -112,7 +112,18 @@ const firebaseConfig = {
 - [ ] Set Fetch to CRON job 1x /  month
 - [X] Hosting
 - [ ] Expand to other states
-- [ ] Check for zero data years
+- [X] Check for zero data entires
 - [ ] Display information about site with link to data in NRCSsites.csv
 - [ ] Graphics
 - [ ] Project details on website
+
+## Firebase
+- data is pulled 1st of month into csv files on server - CRON JOB - Python
+- data is parsed from csv to firebase after completion - CRON JOB - Javascript
+
+
+- user visits site
+- clicks button
+- code + request sent to firestore
+- collection read and displayed
+-- take collection to array, iterate automatically over array of data and date

@@ -17,7 +17,7 @@ Plinko.prototype.show = function(){
     stroke(255);
     var pos = this.body.position;
     push();
-    translate(pos.x, pos.y);
+    translate(pos.x+50, pos.y+20);
     ellipse( 0,0, this.r*2 );
     pop();
 }

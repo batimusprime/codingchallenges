@@ -1,24 +1,19 @@
 # Coding Challenges
+## [https://batimusprime.github.io/codingchallenges/](https://batimusprime.github.io/codingchallenges/)
 ## Demonstration of skills and concepts
 ----
 
 ## 1.0: Fizz-Buzz
-This is a classic implementation of Fizz Buzz
-Planned solutions in multiple languages
+Classic implementation of Fizz Buzz
 +   Python
-+   VBA Script
-+   JavaScript
 
 [1.0 - Fizz-Buzz](/1_FizzBuzz)
 
 
 
 ### 1.1: Fizz-Buzz Extended
-Further demonstration of concept with added visualization
-Records number of blue box, green box, and total number of clicks
-Tests, blue, green, and total clicks
-Notifies when total clicks are multiple of 10 
-+   JavaScript 
+Further demonstration of concept
++   JavaScript / HTML / CSS
 
 [1.A - Fizz-Buzz Extended](1_FizzBuzz/1A_Fizzbuzz_Extended)
 
@@ -42,20 +37,18 @@ More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org
 ---
 
 
-### ~~3.0 - Flappy Bird~~ Non-Working - Removed
+### ~~3.0 - Flappy Bird~~ Non-Working
 Following tutorial to make nueral network powered Flappy Bird game. Non-working, no plans to finish
-Tutorial: [The Coding Train - Coding Challenge #31: Flappy Bird](https://www.youtube.com/watch?v=cXgA1d_E-jY)
-+   Removed
++   JavaScript
 
 ---
 
 ---
 
 ## 4.0 Plinko
-    Testing matter.js p5.js, and basic physics engine 
-    Non-working (no collision between particle and peg)
-Tutorial: [The Coding Train - Plinko With Matter.JS](https://www.youtube.com/watch?v=KakpnfDv_f0)
+Testing matter.js, basic physics engine present
 +   JavaScript
+
 [4.0 - Plinko](4_Plinko)
 
 ---
@@ -63,21 +56,19 @@ Tutorial: [The Coding Train - Plinko With Matter.JS](https://www.youtube.com/wat
 ---
 
 ## 5.0 Fenway Scoreboard
-Built from scratch visualization of the scoreboard on the Green Monster<
-Hosted on Firebase: [https://fenwayscoreboardsim.web.app/](https://fenwayscoreboardsim.web.app/)
-The web scraping portion of the app was abandoned when it was too difficult to find reliable sports sites to scrape
-The current data is entered manually, however planned to update at the END of the game, as several free APIs exist for scores after games are over
-+   Python
+Built from scratch as a means to display baseball scores. Click to interact with cells
+
++   CSS
 +   JavaScript / jQuery
-+   HTML/CSS
+
 [5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
 
 ---
 
 ---
-### ~~6.0 - Side Scroller~~ Moved
+### ~~6.0 - Side Scroller~~
 ## 6.0 - Firebase Wrapper
-API for interfacing with Firebase database
+Front end for interfacing with Firebase database
 + Python
 + Jupyter Notebook
 
@@ -89,8 +80,8 @@ Demonstrates CRUD functions for Firebase realtime database
 + Read
 + Update
 + Delete
-+ JavaScript
-[6.1 - Firebase CRUD](6_Firebase_Wrapper/6_1_Firebase_Wrapper_CRUD)
++ Javascript
+[6.1 - Firebase CRUD](6_Firebase_Wrapper_CRUD)
 
 ---
 
@@ -98,7 +89,7 @@ Demonstrates CRUD functions for Firebase realtime database
 
 ## 7.0 - Trivia Time
 Non-working "The Office" themed trivia game
-Answer questions as fast as possible to move your character down the board
+
 + Javascript
 
 [7.0 - Trivia Time](7_Trivia_Time)
@@ -108,8 +99,9 @@ Answer questions as fast as possible to move your character down the board
 ---
 
 ## 8.0 - NRCS API
-Natural Resources Conservation Service API
+Natural Resources Conservation Service Visualization API
 Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. Data is automatically displayed in a graph using Chart.JS
+
 + Javascript
 + Python
 

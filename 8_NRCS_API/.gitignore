@@ -6,3 +6,4 @@ firebase-init.js
 .firebase/**
 .firebase
 firebase.json
+js/config.json

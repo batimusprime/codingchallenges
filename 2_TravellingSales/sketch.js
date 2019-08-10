@@ -2,7 +2,6 @@ var cities = [];
 var totalCities = 5;
 var recordDistance;
 function setup(){
-
 createCanvas(800,600);
 
 // Create array with random vectors
@@ -21,7 +20,8 @@ for (var i =0; i<totalCities;  i++){
 
 
 function draw(){
-  
+
+  frameRate(10);
   background(0);
   fill(255);
   
@@ -61,7 +61,6 @@ function draw(){
 
     var i = floor(random(cities.length));
     var j = floor(random(cities.length));
-    
     swap(cities,i,j);
     
     
@@ -70,6 +69,10 @@ function draw(){
    if (d<recordDistance){
         recordDistance = d;
         console.log(recordDistance);
+        let textBox = document.getElementById('textBox');
+
+        textBox.innerHTML = recordDistance.toFixed(2);
+
     }
 
 }

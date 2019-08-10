@@ -1,0 +1,63 @@
+#container{
+
+    /*-- Properties for main container --*/
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 1rem;
+
+}
+.container{
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    align-content: space-between;
+    border: 1px solid black;
+    min-height: 3rem;
+
+}
+
+
+.userInfo{
+
+    text-align: center;
+    padding: 1rem;
+    width: 10%;
+    font-size: 1rem;
+
+}
+
+button{
+
+    margin: .5rem;
+
+}
+
+
+#move{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.stats{
+
+
+    text-align: center;
+    width: 10rem;
+    padding: 1rem 0;
+    border: 1px solid gray;
+    font-size: 1.5rem;
+
+}
+
+
+#questContainer{
+
+    padding: 2rem 0;
+
+}

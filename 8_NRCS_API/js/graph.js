@@ -1,3 +1,7 @@
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+//set firestore as 'db'
+let db = firebase.firestore();
 
 //get the data from the csv and return two arrays
 async function getData(){
@@ -24,21 +28,35 @@ async function getData(){
             //no data
 
         }else{
-
+            
             //push data to arrays
             labels.push(date);
             sweData.push(swe);
-            // console.log(date, swe);
+            
+            //push data to firebase here
+            db.collection(code).add({
+                date: date,
+                swe: swe,
+            })
+            .then(function(docRef) {
+             
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
+                        
+           
+       
+            console.log(date, swe);
        
         }
     }
+    drawChart(labels,sweData);
 
 };
 
-async function drawChart(){
-    //execute function and get data in 2 arrays (labels, sweData)
-    await getData();
 
+function drawChart(labels, sweData){
 
     
     //arguments defined in options.js
@@ -58,9 +76,11 @@ const selector = window.location.hash.substring(1)
 
 //assign as variables
 const loc = (selector.split('#')[1]);
-const code = (selector.split('#')[0])
+const code = (selector.split('#')[0]);
 document.getElementById('location').innerHTML = (loc.replace(/%20/g, " ") + " , CA");
 
+
+
 //call main function
-drawChart();
+getData();
 
