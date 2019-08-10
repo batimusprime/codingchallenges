@@ -108,15 +108,8 @@ Answer questions as fast as possible to move your character down the board
 ---
 
 ## 8.0 - NRCS API
-<<<<<<< Updated upstream
 Natural Resources Conservation Service API
 Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. Data is automatically displayed in a graph using Chart.JS
-=======
-Natural Resources Conservation Service Visualization API
-Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. 
-Data is automatically displayed in a graph using Chart.JS
->>>>>>> Stashed changes
-
 + Javascript
 + Python
 
