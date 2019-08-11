@@ -5,14 +5,20 @@
 
 ## 1.0: Fizz-Buzz
 Classic implementation of Fizz Buzz
+Planned solutions in as many languages as possible
 +   Python
++   VBA Script
++   JavaScript
 
 [1.0 - Fizz-Buzz](/1_FizzBuzz)
 
 
 
 ### 1.1: Fizz-Buzz Extended
-Further demonstration of concept
+Further demonstration of concept with added visualization<
+Records number of blue box, green box, and total number of clicks
+Tests, blue, green, and total clicks
+Notifies when total clicks are multiple of 10
 +   JavaScript / HTML / CSS
 
 [1.A - Fizz-Buzz Extended](1_FizzBuzz/1A_Fizzbuzz_Extended)
@@ -56,7 +62,7 @@ Testing matter.js, basic physics engine present
 ---
 
 ## 5.0 Fenway Scoreboard
-Built from scratch as a means to display baseball scores. Click to interact with cells
+Built from scratch as a means to display baseball scores silently. Click to interact with cells
 
 +   CSS
 +   JavaScript / jQuery
@@ -66,22 +72,15 @@ Built from scratch as a means to display baseball scores. Click to interact with
 ---
 
 ---
-### ~~6.0 - Side Scroller~~
-## 6.0 - Firebase Wrapper
-Front end for interfacing with Firebase database
-+ Python
-+ Jupyter Notebook
-
-[6.0 - Firebase Wrapper](6_Firebase_Wrapper)
-
-### 6.1 - Firebase CRUD
-Demonstrates CRUD functions for Firebase realtime database
-+ Create
-+ Read
-+ Update
-+ Delete
+### ~~6.0 - Side Scroller / 6.0 - Firebase Wrapper (py)~~
+### 6.0 - Firebase Wrapper
+Demonstrates CRUD functions for Firebase datastore
++ - Create
++ - Read
++ - Update
++ - Delete
 + Javascript
-[6.1 - Firebase CRUD](6_Firebase_Wrapper_CRUD)
+[6.0 - Firebase Wrapper](6_Firebase_Wrapper)
 
 ---
 
@@ -100,7 +99,8 @@ Non-working "The Office" themed trivia game
 
 ## 8.0 - NRCS API
 Natural Resources Conservation Service Visualization API
-Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. Data is automatically displayed in a graph using Chart.JS
+Allows user to view historical SWE (Snow-Water Equivalent) data for all stations and basins in California. 
+Data is automatically displayed in a graph using Chart.JS
 
 + Javascript
 + Python
