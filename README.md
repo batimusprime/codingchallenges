@@ -5,7 +5,9 @@
 
 ## 1.0: Fizz-Buzz
 Classic implementation of Fizz Buzz
+
 Planned solutions in as many languages as possible
+
 +   Python
 +   VBA Script
 +   JavaScript
@@ -15,10 +17,14 @@ Planned solutions in as many languages as possible
 
 
 ### 1.1: Fizz-Buzz Extended
-Further demonstration of concept with added visualization<
+Further demonstration of concept with added visualization
+
 Records number of blue box, green box, and total number of clicks
+
 Tests, blue, green, and total clicks
+
 Notifies when total clicks are multiple of 10
+
 +   JavaScript / HTML / CSS
 
 [1.A - Fizz-Buzz Extended](1_FizzBuzz/1A_Fizzbuzz_Extended)
@@ -29,7 +35,7 @@ Notifies when total clicks are multiple of 10
 
 
 ## 2.0: Travelling Salesperson
-Classic implementation of algorithmic challenge
+Algorithmic challenge:
 
 >*"Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the origin city?"*
 
