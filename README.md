@@ -44,8 +44,6 @@ More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org
 
 
 ### ~~3.0 - Flappy Bird~~ Non-Working
-Following tutorial to make nueral network powered Flappy Bird game. Non-working, no plans to finish
-+   JavaScript
 
 ---
 
@@ -75,11 +73,12 @@ Built from scratch as a means to display baseball scores silently. Click to inte
 ### ~~6.0 - Side Scroller / 6.0 - Firebase Wrapper (py)~~
 ### 6.0 - Firebase Wrapper
 Demonstrates CRUD functions for Firebase datastore
-+ - Create
-+ - Read
-+ - Update
-+ - Delete
+    - Create
+    - Read
+    - Update
+    - Delete
 + Javascript
+
 [6.0 - Firebase Wrapper](6_Firebase_Wrapper)
 
 ---
