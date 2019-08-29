@@ -27,7 +27,7 @@ Notifies when total clicks are multiple of 10
 
 +   JavaScript / HTML / CSS
 
-Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1A_Fizzbuzz_Extended)
+Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1A_Fizz_Buzz_Extended)
 
 Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_Fizz_Buzz/1_1_Fizzbuzz_Extended/)
 
@@ -44,7 +44,8 @@ Algorithmic challenge:
 More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 +   JavaScript
 
-Code Repository: [2.0 - Travelling Salesperson](2_TravellingSales)
+Code Repository: [2.0 - Travelling Salesperson](2_Travelling_Sales)
+
 Live Demonstration: [2.0 - Travelling Salesperson](https://batimusprime.github.io/codingchallenges/2_Travelling_Sales/)
 
 ---
