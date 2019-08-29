@@ -12,7 +12,7 @@ Planned solutions in as many languages as possible
 +   VBA Script
 +   JavaScript
 
-[1.0 - Fizz-Buzz](/1_FizzBuzz)
+Code Repository: [1.0 - Fizz-Buzz](/1_FizzBuzz)
 
 ---
 
@@ -27,7 +27,9 @@ Notifies when total clicks are multiple of 10
 
 +   JavaScript / HTML / CSS
 
-[1.A - Fizz-Buzz Extended](1_FizzBuzz/1A_Fizzbuzz_Extended)
+Code Repository: [1.1 - Fizz-Buzz Extended](1_FizzBuzz/1A_Fizzbuzz_Extended)
+
+Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_FizzBuzz/1_1_Fizzbuzz_Extended)
 
 ---
 
