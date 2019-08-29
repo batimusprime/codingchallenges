@@ -14,7 +14,7 @@ Planned solutions in as many languages as possible
 
 [1.0 - Fizz-Buzz](/1_FizzBuzz)
 
-
+---
 
 ### 1.1: Fizz-Buzz Extended
 Further demonstration of concept with added visualization
@@ -49,7 +49,20 @@ More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org
 ---
 
 
-### ~~3.0 - Flappy Bird~~ Non-Working
+### ~~~3.0 - Flappy Bird Non-Working~~ Removed
+## 3.0 A-Star / Dijkstra's Algorithm
+
+Blog entry comparing A* and Djikstra's Algorithm
+
+More info: [Wikipedia - Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+
+More Info: [Wikipedia - A* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
+
+More Info: [Youtube- Computerphile - A* (A-Star) Search](https://youtu.be/ySN5Wnu88nE)
+
++   Markdown
+
+[3.0 - A-Star / Dijkstra's Algorithm](3_A_Star)
 
 ---
 
@@ -68,6 +81,8 @@ Testing matter.js, basic physics engine present
 ## 5.0 Fenway Scoreboard
 Built from scratch as a means to display baseball scores silently. Click to interact with cells
 
+Hosted at: [https://fenwayscoreboardsim.firebaseapp.com/](https://fenwayscoreboardsim.firebaseapp.com/)
+
 +   CSS
 +   JavaScript / jQuery
 
@@ -76,7 +91,7 @@ Built from scratch as a means to display baseball scores silently. Click to inte
 ---
 
 ---
-### ~~6.0 - Side Scroller / 6.0 - Firebase Wrapper (py)~~
+### ~~6.0 - Side Scroller / 6.1 - Firebase Wrapper CRUD~~
 ### 6.0 - Firebase Wrapper
 Demonstrates CRUD functions for Firebase datastore
     - Create
