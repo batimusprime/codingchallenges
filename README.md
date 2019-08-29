@@ -12,7 +12,7 @@ Planned solutions in as many languages as possible
 +   VBA Script
 +   JavaScript
 
-Code Repository: [1.0 - Fizz-Buzz](/1_FizzBuzz)
+Code Repository: [1.0 - Fizz-Buzz](/1_Fizz_Buzz)
 
 ---
 
@@ -27,9 +27,9 @@ Notifies when total clicks are multiple of 10
 
 +   JavaScript / HTML / CSS
 
-Code Repository: [1.1 - Fizz-Buzz Extended](1_FizzBuzz/1A_Fizzbuzz_Extended)
+Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1A_Fizzbuzz_Extended)
 
-Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_FizzBuzz/1_1_Fizzbuzz_Extended)
+Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_Fizz_Buzz/1_1_Fizzbuzz_Extended/)
 
 ---
 
@@ -44,7 +44,8 @@ Algorithmic challenge:
 More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 +   JavaScript
 
-[2.0 - Travelling Salesperson](2_TravellingSales)
+Code Repository: [2.0 - Travelling Salesperson](2_TravellingSales)
+Live Demonstration: [2.0 - Travelling Salesperson](https://batimusprime.github.io/codingchallenges/2_Travelling_Sales/)
 
 ---
 
