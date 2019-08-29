@@ -66,7 +66,7 @@ More Info: [Youtube- Computerphile - A* (A-Star) Search](https://youtu.be/ySN5Wn
 
 +   Markdown
 
-[3.0 - A-Star / Dijkstra's Algorithm](3_A_Star)
+Code Repository: [3.0 - A-Star / Dijkstra's Algorithm](3_A_Star)
 
 ---
 
@@ -76,7 +76,7 @@ More Info: [Youtube- Computerphile - A* (A-Star) Search](https://youtu.be/ySN5Wn
 Testing matter.js, basic physics engine present
 +   JavaScript
 
-[4.0 - Plinko](4_Plinko)
+Code Repository: [4.0 - Plinko](4_Plinko)
 
 ---
 
@@ -85,13 +85,14 @@ Testing matter.js, basic physics engine present
 ## 5.0 Fenway Scoreboard
 Built from scratch as a means to display baseball scores silently. Click to interact with cells
 
-Hosted at: [https://fenwayscoreboardsim.firebaseapp.com/](https://fenwayscoreboardsim.firebaseapp.com/)
 
-+   CSS
 +   JavaScript / jQuery
++   CSS
++   Python
 
-[5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
+Code Repository: [5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
 
+Hosted at: [https://fenwayscoreboardsim.firebaseapp.com/](https://fenwayscoreboardsim.firebaseapp.com/)
 ---
 
 ---
@@ -102,9 +103,11 @@ Demonstrates CRUD functions for Firebase datastore
     - Read
     - Update
     - Delete
+    - 
 + Javascript
 
-[6.0 - Firebase Wrapper](6_Firebase_Wrapper)
+Code Repository: [6.0 - Firebase Wrapper](6_Firebase_Wrapper)
+Live Demonstration: [6.0 - Firebase Wrapper](https://batimusprime.github.io/codingchallenges/6_Firebase_Wrapper)
 
 ---
 
@@ -115,7 +118,8 @@ Non-working "The Office" themed trivia game
 
 + Javascript
 
-[7.0 - Trivia Time](7_Trivia_Time)
+Code Repository: [7.0 - Trivia Time](7_Trivia_Time)
+Live Demonstration: [7.0 - Trivia Time](https://batimusprime.github.io/codingchallenges/7_Trivia_Time)
 
 ---
 
@@ -129,7 +133,8 @@ Data is automatically displayed in a graph using Chart.JS
 + Javascript
 + Python
 
-[8.0 - NRCS API](8_NRCS_API)
+Code Repository: [8.0 - NRCS API](8_NRCS_API)
+Live Demonstration: [8.0 - NRCS API](https://batimusprime.github.io/codingchallenges/8_NRCS_API)
 
 ---
 
