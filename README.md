@@ -95,6 +95,7 @@ Code Repository: [5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
 
 Hosted at: [https://fenwayscoreboardsim.firebaseapp.com/](https://fenwayscoreboardsim.firebaseapp.com/)
 
+Hosted at: [https://fenwayscoreboardsim.firebaseapp.com/](https://fenwayscoreboardsim.firebaseapp.com/)
 ---
 
 ---
