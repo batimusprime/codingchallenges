@@ -9,6 +9,4 @@ Notifies when total clicks are multiple of 10
 
 +   JavaScript
 
-Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1_1_Fizz_Buzz_Extended)
-
 Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_Fizz_Buzz/1_1_Fizz_Buzz_Extended/)
