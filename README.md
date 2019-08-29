@@ -25,7 +25,7 @@ Tests, blue, green, and total clicks
 
 Notifies when total clicks are multiple of 10
 
-+   JavaScript / HTML / CSS
++   JavaScript
 
 Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1_1_Fizz_Buzz_Extended)
 
@@ -42,6 +42,7 @@ Algorithmic challenge:
 >*"Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the origin city?"*
 
 More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+
 +   JavaScript
 
 Code Repository: [2.0 - Travelling Salesperson](2_Travelling_Sales)
@@ -88,7 +89,6 @@ Live Demonstration:  [4.0 - Plinko](https://batimusprime.github.io/codingchallen
 Built from scratch as a means to display baseball scores silently. Click to interact with cells
 
 +   JavaScript / jQuery
-+   CSS
 +   Python
 
 Code Repository: [5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
