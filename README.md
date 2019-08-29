@@ -27,9 +27,9 @@ Notifies when total clicks are multiple of 10
 
 +   JavaScript / HTML / CSS
 
-Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1A_Fizz_Buzz_Extended)
+Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1_1_Fizz_Buzz_Extended)
 
-Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_Fizz_Buzz/1_1_Fizzbuzz_Extended/)
+Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_Fizz_Buzz/1_1_Fizz_Buzz_Extended/)
 
 ---
 
