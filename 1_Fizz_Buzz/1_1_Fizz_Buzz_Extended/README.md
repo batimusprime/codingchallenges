@@ -1,7 +1,14 @@
-Three squares
+### 1.1: Fizz-Buzz Extended
+Further demonstration of concept with added visualization
 
-total click counter
+Records number of blue box, green box, and total number of clicks
 
-click count for each square
+Tests, blue, green, and total clicks
 
-incremental notifications
+Notifies when total clicks are multiple of 10
+
++   JavaScript
+
+Code Repository: [1.1 - Fizz-Buzz Extended](1_Fizz_Buzz/1_1_Fizz_Buzz_Extended)
+
+Live Demonstration: [1.1 - Fizz-Buzz Extended](https://batimusprime.github.io/codingchallenges/1_Fizz_Buzz/1_1_Fizz_Buzz_Extended/)

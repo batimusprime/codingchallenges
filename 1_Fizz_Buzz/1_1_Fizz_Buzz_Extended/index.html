@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>1.1: Fizz Buzz Extended</title>
 </head>
 <body>
 <style>
@@ -49,7 +49,11 @@ html{
 
 </style>    
 <!-- flexbox container -->
+<h2>Fizz Buzz Extended Demonstration</h1>
+<h2>Click on a square to see the count below: </h2>
+<h3>Number to alert: <input type="number" id="userInput"></h3>
 <div id = "container">
+
     <!-- click targets -->
     <div id = "green" class = "box"></div>
 
@@ -65,7 +69,7 @@ html{
 <script>
 
     //increment to display alerts, default 10
-    var inc = 10;
+    var inc = document.getElementById('userInput').value;
 
     //automatically create array with numbers 0 - 99
     var bucket = Array.apply(null, {length: 100}).map(Number.call, Number)
@@ -123,7 +127,7 @@ html{
         if (bucket.includes(testCount)){
             //display the message inside the totalStatus HTML element
 
-             var totalStatus = document.getElementById("totalStatus").innerHTML = ("Your total clicks are a multiple of " + inc + " \(" + testCount + "*" + inc + ")");
+             var totalStatus = document.getElementById("totalStatus").innerHTML = "Your total clicks are a multiple of " + inc + " (" + testCount.toString() + "*" + inc.toString() + " = " + (testCount*inc) + ")";
 
         }
 
