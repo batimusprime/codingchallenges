@@ -49,7 +49,7 @@ More info: [Wikipedia - Travelling salesperson problem](https://en.wikipedia.org
 ---
 
 
-### ~~~3.0 - Flappy Bird Non-Working~~ Removed
+### ~~3.0 - Flappy Bird Non-Working~~ Removed
 ## 3.0 A-Star / Dijkstra's Algorithm
 
 Blog entry comparing A* and Djikstra's Algorithm
