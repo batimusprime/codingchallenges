@@ -1,51 +1,95 @@
-//module aliases
-var Engine = Matter.Engine,
+//module aliases from Matter.js wiki
+let Engine = Matter.Engine,
 World = Matter.World,
+Events = Matter.Events,
 Bodies = Matter.Bodies;
 
-var engine;
-var world;
-var particles = [];
-var plinkos = [];
-var cols = 5;
-var rows = 5;
+//empty array for pucks
+let pucks = [];
+let pegs = [];
+let cols = 7;
+let rows = 10;
 
 function setup(){
+    //p5 create canvas func
+    createCanvas(600,800);
 
-    createCanvas(600,400);
+    //built in Matter.js engine / world ref
     engine = Engine.create();
-    world = engine.world;
-    newParticle();
-    var spacing = width/cols;
+    world = engine.world
 
-    for (var j = 0; j<rows; j++){
-        for (var i = 0; i<cols; i++){
-        var p = new Plinko(i*spacing, j*spacing, 5)
-        plinkos.push(p);
+    //create a puck to start
+    newPuck();
+
+    let spacing = width / cols;
+
+    //for loop of pegs
+    for(i=0;i<rows;i++){
+
+        for(j=0;j<cols;j++){
+            
+            //set x pos, shift to left 20 
+            let x = (spacing /2) + j * spacing-20;
+            
+            //offset every other row
+            if(i % 2 == 0){
+
+                x += spacing/2;
+
+            }
+
+            let y = spacing + i * spacing
+
+            //create a new peg
+            let peg = new Peg(x,y,10)
+            pegs.push(peg)
+
+        }
+
+
     }
-    }
+  
+
+
+
 
 }
 
+function newPuck(){
 
-function newParticle(){
-  var p = new Particle(300,50, 10);
-        particles.push(p);
+
+        //create a new puck at coords (300,0) with radius (20)
+        p = new Puck(300,0,25);
+        //add puck to array of pucks
+        pucks.push(p)
+
 
 }
+
 function draw(){
 
+    //appx every 1 second
     if (frameCount % 60 == 0){
+        newPuck();
         
-        newParticle();
-      
     }
-    
-    background(51);
+
+    //P5 background color
+    background(255);
+
+    //update the engine
     Engine.update(engine);
-    for (var i = 0; i < particles.length; i++){
-        particles[i].show();
-    };for (var i = 0; i < plinkos.length; i++){
-        plinkos[i].show();
-    };
+
+    for (i=0;i<pucks.length;i++){
+
+        //show the puck
+        pucks[i].show();
+    
+    }
+    for (j=0;j<pegs.length;j++){
+
+        //show the puck
+        pegs[j].show();
+    
+    }
 }
