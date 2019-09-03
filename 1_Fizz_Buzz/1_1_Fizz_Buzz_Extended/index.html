@@ -51,7 +51,6 @@ html{
 <!-- flexbox container -->
 <h2>Fizz Buzz Extended Demonstration</h1>
 <h2>Click on a square to see the count below: </h2>
-<h3>Number to alert: <input type="number" id="userInput"></h3>
 <div id = "container">
 
     <!-- click targets -->
@@ -69,7 +68,7 @@ html{
 <script>
 
     //increment to display alerts, default 10
-    var inc = document.getElementById('userInput').value;
+    var inc = 10;
 
     //automatically create array with numbers 0 - 99
     var bucket = Array.apply(null, {length: 100}).map(Number.call, Number)
