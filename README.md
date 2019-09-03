@@ -1,6 +1,8 @@
 # Coding Challenges
 ## [https://batimusprime.github.io/codingchallenges/](https://batimusprime.github.io/codingchallenges/)
-## Demonstration of skills and concepts
+## This collection of coding challenges is a demonstration of skills and concepts
+
+
 ----
 
 ## 1.0: Fizz-Buzz
@@ -91,9 +93,9 @@ Built from scratch as a means to display baseball scores silently. Click to inte
 +   JavaScript / jQuery
 +   Python
 
-Code Repository: [5.0 - Fenway Sccoreboard Simulator](5_Fenway_Scoreboard)
+Code Repository: [5.0 - Fenway Scoreboard Simulator](5_Fenway_Scoreboard)
 
-Hosted at: [https://fenwayscoreboardsim.firebaseapp.com/](https://fenwayscoreboardsim.firebaseapp.com/)
+Hosted at: [https://fenwayscoreboardsim.web.app/](https://fenwayscoreboardsim.web.app/)
 
 ---
 
