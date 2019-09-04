@@ -76,4 +76,5 @@ Los Angeles | 100 | 140
 Fresno | 200 | 340
 San Francisco | 900 |1240
 **Solution** | | **T<sub>1</sub> = 1240** 
+
 Dijkstra’s Algorithm will always return a path but it may not the optimal path, as it is a greedy search. A greedy search will always mathematically compare the weight of the next journey and choose the smallest number, with no concern for efficiency or time of processing.
