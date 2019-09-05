@@ -2,6 +2,8 @@
 ## A Presentation and Demonstration of Concept
 ---
 
+## Presentation
+
 ### Introduction
 
 Dijkstra’s Algorithm is a search algorithm commonly used for finding the shortest path  between two points. The A * (A Star) algorithm is an implementation that improves upon Dijkstra’s original conception, while also considering the efficiency of the entire path. Applications of these algorithms include GPS navigation, routing protocols, and producing shortest-path spanning trees. These protocols are not appropriate for all types of problem and must be implemented carefully to avoid inefficiencies and confusion.
@@ -55,9 +57,9 @@ Dijkstra’s Algorithm is considered a greedy search, as it does not consider th
 
 A * Search can be expressed as f(n) = g(n) + h(n) where g(n) = cost of traversing to point and h(n) = heuristic estimating cheapest cost of function. The added heuristic must be customized to the application and has several rules for its implementation. In this way A* Search can be fine tuned for maximum efficiency by controlling the precision requirements of the desired output. This also makes the time complexity and efficiency difficult to express mathematically using A * Search, because the exact numbers are dependent on the heuristic. 
 
-## Demonstration of Concepts
+## Demonstration
 
-### Problem
+## Problem
 ---
 
 ![Figure 1](img/1.png)
@@ -78,3 +80,65 @@ San Francisco | 900 |1240
 **Solution** | | **T<sub>1</sub> = 1240** 
 
 Dijkstra’s Algorithm will always return a path but it may not the optimal path, as it is a greedy search. A greedy search will always mathematically compare the weight of the next journey and choose the smallest number, with no concern for efficiency or time of processing.
+
+### A* Evolution 1
+---
+
+![Figure 3](img/3.png)
+
+City | Distance | Total | < T<sub>1</sub> ?
+---|---|---|---
+Los Angeles | 50 | 50 | Y
+Fresno | 200 | 250 | Y
+San Francisco | 900 |1150 | Y
+**Solution** | | **T<sub>2</sub> = 1150** 
+
+A* Search will run multiple iterations (including the original from the Dijkstra’s evolution) while retaining the overall shortest distance and attempting to beat it with each evolution until all options are exhausted.
+
+### A* Evolution 2
+---
+
+![Figure 4](img/4.png)
+
+City | Distance | Total | < T<sub>2</sub> ?
+---|---|---|---
+Irvine | 40 | 40 | Y
+San Francisco | 900 |1140 | Y
+**Solution** | | **T<sub>3</sub> = 1140** 
+
+The final evolution of A* shows that it can efficiently find a path that Dijkstra’s missed, simply by using a very early example of machine learning to determine the desired outcome.
+
+---
+
+Dijkstra’s Algorithm can have some inherent inefficiencies in pathfinding problems; given specific conditions or real-world applications. In the below example Dijkstra’s Algorithm will search nearly infinitely in the same direction before considering the actual most efficient path.
+
+![Inefficiency in Real World Applications](img/ineff.png)
+
+### Summary
+
+Improving upon Dijkstra’s original work allowed for implementation of the search algorithm in real world applications. Satellite GPS uses the principles of A *to remain as efficient as possible to save precious processing power of devices and reduce data manipulation costs. Dijkstra’s algorithm is the basis for many shortest path applications and helps solve many modern-day problems. Dijkstra’s algorithm is applied in network routing protocols, specifically OSPF (Open Shortest Path First) and IS-IS (Intermediate System to Intermediate System). Any maze solving or path finding algorithm can link its lineage to Dijkstra’s groundbreaking computer science concept.
+
+#### References
+- https://en.wikipedia.org/wiki/Dijkstra's_algorithm
+- https://en.wikipedia.org/wiki/Edsger_W._Dijkstra
+- https://en.wikipedia.org/wiki/A*_search_algorithm
+- http://www-set.win.tue.nl/UnsungHeroes/machines/armac.html
+- Computerphile: A * (A Star) Search Algorithm: https://www.youtube.com/watchv=ySN5Wnu88nE
+- Computerphile: Dijkstra’s Algorithm: https://www.youtube.com/watch?v=GazC3A4OQTE
+  
+- Melissa Yan: MIT: Dijkstra’s Algorithm:
+http://math.mit.edu/~rothvoss/18.304.3PM/Presentations/1-Melissa.pdf
+
+#### Further Information
+
+- Dijkstra’s Algorithm: Python Gist by econchick: https://gist.github.com/econchick/4666413
+
+- Dijkstra’s Algorithm in Java by Florida Institute of Technology https://cs.fit.edu/~ryan/java/programs/graph/Dijkstra-java.html 
+
+- Dijkstra’s Algorithm: C++ Gist by vertexclique: https://gist.github.com/vertexclique/7410577
+
+- Rosetta Code: Dijkstra’s Algorithm: https://rosettacode.org/wiki/Dijkstra%27s_algorithm
+  
+#### Image Credits:
+1.	http://www-set.win.tue.nl/UnsungHeroes/machines/armac.html
+2.	https://en.wikipedia.org/wiki/Shakey_the_robot#/media/File:SRI_Shakey_with_callouts.jpg
