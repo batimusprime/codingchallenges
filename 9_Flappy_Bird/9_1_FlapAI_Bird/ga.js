@@ -1,6 +1,7 @@
 var f = 1
 function nextGen(){
-    console.log('Generation: ', f);
+    dispGen(f)
+    // console.log('Generation: ', f);
     
     calcFit();
 
@@ -48,5 +49,13 @@ function alphaBird(){
     let child = new Bird(bird.nn);
     child.mutate();
     return child;
+
+}
+
+function dispGen(f){
+
+    console.log('Generation: ', f)
+    let gen = document.getElementById('gen')
+    gen.innerHTML = 'Generation: ' +  f;
 
 }

@@ -5,6 +5,7 @@
         let alpha = [];
         let counter = 0;
         let slider;
+        let st = '1';
         function setup(){
 
             createCanvas(600,500);
@@ -13,14 +14,27 @@
                 
                 //create bird and pipe objects
                 birds[i] = new Bird();
-
+                
             }
             pipe = new Pipe();
         }
-
+        
         function draw(){
-            
+
+
+        //change speed display on slider move
+        slider.input(function(){
+            //get value of slider as string, write to div
+            speedNum = ('Speed:' + slider.value().toString())
+            let speedDisp = document.getElementById('speed')
+            speedDisp.innerHTML = speedNum;
+        });
+        
+        
+
+        
             for (let n=0;n<slider.value();n++){
+              
 
                 if (counter % 150 == 0){
                     
@@ -101,3 +115,4 @@
             }
             }
     }//end draw
+
