@@ -1,4 +1,4 @@
-# Plink
+# Plinko
 ## Coding Train Coding Challenge #62
 
 ---
