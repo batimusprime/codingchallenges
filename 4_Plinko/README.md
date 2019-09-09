@@ -1,11 +1,10 @@
 # Plinko
-## Coding Train Coding Challenge #62
+## Coding Train: Coding Challenge #62
 
 ---
 
-### TODO:
+Recreation of the Price is Right Game Plinko following tutorial / coding challenge from The Coding Train. 
 
-- Add buckets
-- Add boundaries
-- Better colors
-- Finish tutorial
+Demonstration of Matter.JS (physics) and P5.JS (visualization)
+
++ JavaScript
