@@ -1,4 +1,4 @@
-        const TOTAL = 500;
+        const TOTAL = 300;
         //empty pipe array and global bird variable
         let pipes = [];
         let birds = [];
@@ -21,8 +21,6 @@
         function draw(){
             
             for (let n=0;n<slider.value();n++){
-
-
 
                 if (counter % 150 == 0){
                     
@@ -78,7 +76,13 @@
                 
                 }
             }
-            
+            for (let i=birds.length-1;i>=0;i--){
+                    
+                if (birds[i].offScreen()){
+                    
+                    alpha.push(birds.splice(i,1)[0]);
+                    
+                }
         }
             //all the drawing
             //set background color to black
@@ -95,4 +99,5 @@
                 pipe.show();
                 
             }
-        }//end draw
+            }
+    }//end draw

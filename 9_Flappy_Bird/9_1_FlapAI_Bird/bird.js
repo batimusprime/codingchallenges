@@ -52,17 +52,6 @@ update(){
     
     //if bird doesn't "fly" to keep velocity up, this.y is reduced by 1
     this.y += this.velocity
-    
-    if (this.y > height){
-        
-        this.y = height;
-        this.velocity = 0;
-    }
-    
-    if (this.y < 0){
-        this.y = 0;
-        this.velocity = 0;
-    }
 }
 
 fly(){this.velocity += this.lift}
@@ -72,7 +61,7 @@ calc(pipes) {
     let closest = null;
     let record = Infinity;
     for (let i = 0; i < pipes.length; i++) {
-      let diff = pipes[i].x - this.x;
+      let diff = (pipes[i].x + pipes[i].w- this.x);
       if (diff > 0 && diff < record) {
         record = diff;
         closest = pipes[i];
@@ -98,15 +87,21 @@ calc(pipes) {
       // Decide to jump or not!
       if (action[1] > action[0]) {
         this.fly();
-      }
+         }
+        }
     }
-  }
 
          
-         mutate(){
+    mutate(){
         
 
         this.nn.mutate(0.1);
+
+    }
+    //returns true if bird is offscreen
+    offScreen(){
+
+        return this.y > height || this.y < 0;
 
     }
     
