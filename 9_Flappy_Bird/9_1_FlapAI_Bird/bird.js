@@ -30,7 +30,7 @@
     }else{
 
         //otherwise create new NN
-        this.nn = new NeuralNetwork(4,4,2);
+        this.nn = new NeuralNetwork(5,8,2);
     }
 }
 
@@ -67,40 +67,44 @@ update(){
 
 fly(){this.velocity += this.lift}
 
-calc(pipes){
-    
+calc(pipes) {
+    // First find the closest pipe
     let closest = null;
-    let closestD = Infinity;
-    for (let i=1;i<pipes.length;i++){
-        
-        let d = pipes[i].x - this.x;
-
-        if (d < closestD && d > 0){
-
-            closest = pipes[i]
-            closestD = d;
-
-        }
+    let record = Infinity;
+    for (let i = 0; i < pipes.length; i++) {
+      let diff = pipes[i].x - this.x;
+      if (diff > 0 && diff < record) {
+        record = diff;
+        closest = pipes[i];
+      }
     }
-    //define inputs
-    let inputs = [];
-    inputs[0] = this.y;
-    inputs[1] = pipes[0].top
-    inputs[2] = pipes[0].bottom / height
-    inputs[3] = pipes[0].x / height
-    
-    //predict function from NN
-    let output = this.nn.predict(inputs)
-    
-    //if probability that another obstacle is coming is over 50%, jump
-    if (output[0] > output[1]){
-        
+
+    if (closest != null) {
+      // Now create the inputs to the neural network
+      let inputs = [];
+      // x position of closest pipe
+      inputs[0] = map(closest.x, this.x, width, 0, 1);
+      // top of closest pipe opening
+      inputs[1] = map(closest.top, 0, height, 0, 1);
+      // bottom of closest pipe opening
+      inputs[2] = map(closest.bottom, 0, height, 0, 1);
+      // bird's y position
+      inputs[3] = map(this.y, 0, height, 0, 1);
+      // bird's y velocity
+      inputs[4] = map(this.velocity, -5, 5, 0, 1);
+
+      // Get the outputs from the network
+      let action = this.nn.predict(inputs);
+      // Decide to jump or not!
+      if (action[1] > action[0]) {
         this.fly();
-        
+      }
     }
-}
+  }
 
-    mutate(){
+         
+         mutate(){
+        
 
         this.nn.mutate(0.1);
 

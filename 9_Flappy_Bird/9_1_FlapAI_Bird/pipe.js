@@ -15,7 +15,7 @@
             this.speed = 2;
 
             //gap between the pipes
-            this.gap = 200;
+            this.gap = 100;
 
             //center of the gap is in a random location, and expanded from there
             this.cent = random(this.gap,height - this.gap);
