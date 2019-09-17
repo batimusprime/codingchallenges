@@ -11,6 +11,9 @@
 </head> 
 <body>
     <!-- Use Up Arrow to Flap-->   
+    
+    <h2>Use UP ARROW to flap</h2>
+    <div id="status"> </div>
     <script>
 
         //empty pipe array and global bird variable
@@ -29,7 +32,7 @@
 
             //set background color to black
             background(0);
-            
+
             //display the sprite
             bird.show();
 
@@ -56,6 +59,8 @@
 
                     //insert negative score or death here
                     console.log('boom!');
+                    document.getElementById('status').innerHTML = 'CRASH! Please refresh';
+                    noLoop();
 
                 }
                 //once the pipe leaves our view, remove it

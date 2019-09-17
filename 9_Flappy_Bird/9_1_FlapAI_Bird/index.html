@@ -6,14 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flappy Bird</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
-    <script src="/lib/nn.js"></script>
-    <script src="/lib/matrix.js"></script>
-    <script src="pipe.js"></script>
-    <script src="bird.js"></script>
-    <script src="ga.js"></script>
-    <script src="script.js"></script>
+
 
 </head> 
 <body>
@@ -24,9 +17,8 @@
             flex-direction: column;
             align-content: center;
             justify-content: center;
-
-            font-size: 2rem; 
-            text-align: center; 
+            background-color: black;
+       
 
         }
         canvas{
@@ -34,14 +26,40 @@
 
             margin: 0 auto;
             padding-bottom: 2rem;
+
         }
         input{
             margin: 0 auto;
-            max-width: 80%;
+            width: 40%;
 
         }
+        #disp{
+
+            margin: 0 auto;
+            /* background-color: black; */
+            color: rgb(78, 252, 3);
+            font-size: 1rem; 
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
     </style>
-    <div id="gen">Generation 1</div>
-    <div id="speed">Speed 1</div>
+
+    <div id="disp">
+
+        <div id="gen">Generation: 1</div>
+        <div id="birds">Birds: 300</div>
+        <div id="speed">Speed: 1</div>
+        <div id="score">Current Score: 0</div>
+        <div id="hiscore">High Score: 0</div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
+    <script src="/lib/nn.js"></script>
+    <script src="/lib/matrix.js"></script>
+    <script src="pipe.js"></script>
+    <script src="ga.js"></script>
+    <script src="script.js"></script>
+    <script src="bird.js"></script>
 </body>
 </html>

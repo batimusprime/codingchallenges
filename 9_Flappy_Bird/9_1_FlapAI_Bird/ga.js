@@ -28,7 +28,10 @@ function calcFit(){
     for (let bird of alpha){
         //fitness is a measure of how this bird did versus the average, fitness is probability this will be selected
         bird.fitness += bird.score / sum;
-
+        //record and write high score, scaled down to maintain reasonable numbers
+        let highScore = Math.max(sum)*.001;
+        let scoreDisp = document.getElementById('hiscore');
+        scoreDisp.innerHTML = 'High Score: ' + highScore.toFixed(0);
     }
 
 }
@@ -54,7 +57,6 @@ function alphaBird(){
 
 function dispGen(f){
 
-    console.log('Generation: ', f)
     let gen = document.getElementById('gen')
     gen.innerHTML = 'Generation: ' +  f;
 

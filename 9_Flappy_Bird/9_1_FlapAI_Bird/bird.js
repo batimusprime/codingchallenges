@@ -1,3 +1,5 @@
+
+  
   //bird / main sprite class
   class Bird{
 
@@ -32,20 +34,21 @@
         //otherwise create new NN
         this.nn = new NeuralNetwork(5,8,2);
     }
-}
+
+    this.color = 'rgba('+ rando1 + ',' + rando2 + ',' + rando3 + ',1)'
+}//end constructor
 
 //displays bird on canvas
 show(){
-
-    fill(255,10);
+    fill(this.color);
     stroke(155);
     ellipse(this.x,this.y,16,16)
-    
 }
 //move the bird / update its pos
 update(){
     //everytime update is called the score goes up
     this.score++;
+    document.getElementById('score').innerHTML = 'Current Score: ' + (this.score*.001).toFixed(0);
     
     //gravity "pulls" down on velocity
     this.velocity += this.gravity*this.resistance;
@@ -84,11 +87,11 @@ calc(pipes) {
 
       // Get the outputs from the network
       let action = this.nn.predict(inputs);
-      // Decide to jump or not!
-      if (action[1] > action[0]) {
-        this.fly();
-         }
-        }
+
+      // Decide to jump[1] or not[0]!
+      if (action[1] > action[0]) {this.fly()}
+        
+      }
     }
 
          

@@ -5,10 +5,13 @@
         let alpha = [];
         let counter = 0;
         let slider;
-        let st = '1';
+        let rando1
+        let rando2
+        let rando3
+
         function setup(){
 
-            createCanvas(600,500);
+            createCanvas(800,400);
             slider = createSlider(1, 100, 1);
             for (i=0;i<TOTAL;i++){
                 
@@ -17,20 +20,31 @@
                 
             }
             pipe = new Pipe();
+     
         }
         
         function draw(){
 
+            //information display
+            //random numbers for color
+            rando1 = random(0,255).toFixed(0);
+            rando2 = random(0,255).toFixed(0);
+            rando3 = random(0,255).toFixed(0);
 
-        //change speed display on slider move
-        slider.input(function(){
-            //get value of slider as string, write to div
-            speedNum = ('Speed:' + slider.value().toString())
-            let speedDisp = document.getElementById('speed')
-            speedDisp.innerHTML = speedNum;
-        });
-        
-        
+            //display remaining birds
+            let birdsRemain = document.getElementById('birds');
+            birdsRemain.innerHTML = ('Birds: ' + birds.length);
+            
+            //change speed display on slider move using callback func
+            slider.input(function(){
+            
+                //get value of slider as string, write to div
+                speedNum = ('Speed:' + slider.value().toString())
+                //write to div
+                let speedDisp = document.getElementById('speed')
+                speedDisp.innerHTML = speedNum;
+
+            });
 
         
             for (let n=0;n<slider.value();n++){
@@ -104,7 +118,7 @@
             
             for (let bird of birds){
                 
-                bird.show();
+                bird.show(randFill);
                 
             }
             
@@ -116,3 +130,8 @@
             }
     }//end draw
 
+//returns a random color in a formatted string
+function randFill(){
+
+    return 'rgba('+ rando1 + ',' + rando2 + ',' + rando3 + ',0.25)'
+}
