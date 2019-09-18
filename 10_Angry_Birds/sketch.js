@@ -1,5 +1,5 @@
 //this allows skip prefixing for Matter.js objects
-const {Engine,World,Bodies,Mouse, MouseConstraint,Constraint} = Matter;
+const {Engine,World,Bodies,Mouse,MouseConstraint,Constraint} = Matter;
 
 //declare global variables
 let ground;
@@ -47,8 +47,21 @@ function setup() {
   mCon = MouseConstraint.create(engine, options);
   World.add(world,mCon);
 
-}
 
+
+  
+}//end setup
+function mouseReleased(){
+
+  setTimeout(()=>{
+
+    sling.release();}, 
+    
+    50)
+
+
+
+}
 //main draw func
 function draw() {
 
@@ -160,14 +173,22 @@ class Sling{
     World.add(world,this.sling);
 
   }
+  release(){
 
+    this.sling.bodyB = null;
+
+  }
   show(){
     
-    stroke(255)
-    const posA = this.sling.pointA;
-    const posB = this.sling.bodyB.position;
-    line(posA.x, posA.y, posB.x, posB.y);
+    //only do this if there is a body attached
+    if(this.sling.bodyB){
 
+      stroke(255)
+      const posA = this.sling.pointA;
+      const posB = this.sling.bodyB.position;
+      line(posA.x, posA.y, posB.x, posB.y);
+      
+    }
   }
 
 }

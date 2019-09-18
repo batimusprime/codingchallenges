@@ -165,19 +165,37 @@ Live Demonstration: [9.0 - Flappy Bird](https://batimusprime.github.io/codingcha
 
 ---
 
-## 9.0 - Flappy Bird
-Use UP ARROW to fly.
+## 9.1 - FlapAI Bird
 
-Clone of Android game, going to be used to implement a simple nueral network and genetic algorithm. 
+Implementation of genetic algorithm and machine learning via toy neural network.
+
+Genetic algorithm determines fitness of bird (distance / score) and increases the odds that birds will be selected by their fitness levels
+This does not mean the best bird always wins or that the population increases in fitness as it is random
+Fitness only increases the odds
+
+Toy nueral network inputs:
+```js
+      //x position of closest pipe
+      inputs[0] = map(closest.x, this.x, width, 0, 1);
+      //top of closest pipe opening
+      inputs[1] = map(closest.top, 0, height, 0, 1);
+      //bottom of closest pipe opening
+      inputs[2] = map(closest.bottom, 0, height, 0, 1);
+      //bird's y position
+      inputs[3] = map(this.y, 0, height, 0, 1);
+      //bird's y velocity
+      inputs[4] = map(this.velocity, -5, 5, 0, 1); 
+```
+![Input Demonstration](9_Flappy_Bird/9_1_FlapAI_Bird/demo.png "Logo Title Text 1")
 
 Coding Train: Coding Challenge #31 [https://www.youtube.com/watch?v=cXgA1d_E-jY]([https://www.youtube.com/watch?v=cXgA1d_E-jY])
-+ Using P5.js
++ P5.js
 + Javascript
++ Toy Nueral Network and Matrix
 
+Code Repository: [9.1 - FlapAI Bird](9_Flappy_Bird/9_1_FlapAI_Bird)
 
-Code Repository: [9.0 - Flappy Bird](9_Flappy_Bird)
-
-Live Demonstration: [9.0 - Flappy Bird](https://batimusprime.github.io/codingchallenges/9_Flappy_Bird)
+Live Demonstration: [9.1 - FlapAI Bird](https://batimusprime.github.io/codingchallenges/9_Flappy_Bird/9_1_FlapAI_Bird)
 
 ---
 
