@@ -139,6 +139,7 @@ class Cell{
     }
 
     findNear(grid){
+
         console.log('findNear' + grid);
 
         let i = this.x;
@@ -165,6 +166,7 @@ class Cell{
 
     }
 }
+//
 
 function removeSet(arr, elt){
     console.log('removing')
