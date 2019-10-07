@@ -7,37 +7,72 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
 <! -- Local Sketch -->
 <script src="sketch.js"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+			  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+			  crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
     <div id="container">
-        <h1>Travelling Salesperson Problem </h1>
-        <h2>Refresh to restart problem</h2>
-        <h2><a href="https://github.com/batimusprime/codingchallenges/tree/master/2_Travelling_Sales/">Back to Github</a></h2>
         
+        <h2>Travelling Salesperson Problem </h2>
+        
+        
+        <span>Shortest Distance:</span><span id="textBox"></span>
+        
+        <form>
+            
+            <label for="cities">Cities:</label>
+            <input type="number" id="cities" value="50"></input>
+            <button type="submit" id="submit">Start</button>
+            
+        </form>
         <hr>
-        <h1>Shortest Distance: <span id="textBox"></span></h1>
+        <a href="https://github.com/batimusprime/codingchallenges/tree/master/2_Travelling_Sales/">Back to Github</a>
+
     </div>
 
+    <!-- Styles Section-->
     <style>
     html, body {
-
-    padding: 0;
-    margin: 0;
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow-y: hidden;
+        padding: 0;
+        margin: 0;
+    
     }
 
     body {
 
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;    
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;    
+        font-weight: bold;
+    
+    }
+ 
+    span, a, label{
+
+        font-size: 1.5rem;
+        padding: .5rem;
     }
 
+    #container{
+
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 2rem;
+
+    }
     </style>
 
 </body>
