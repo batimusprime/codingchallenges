@@ -1,0 +1,152 @@
+function setup(){
+
+    createCanvas(600,450)
+    sprite = new Sprite();
+    obst = new Obstacle();
+
+}
+
+function keyPressed(){
+
+    if(key == ' ' && sprite.down){
+        sprite.jump();
+        console.log(Math.floor(Math.round(sprite.y)) +  ' jump ' + sprite.down)
+
+    }else{
+
+
+    }
+
+}
+function draw(){
+    background(51);
+    console.log(sprite.down)
+    obst.show();
+    obst.move();
+    if(obst.x < 0){
+        obst = new Obstacle();
+        obst.show();
+        obst.move();
+        
+    }
+    sprite.show();
+    sprite.move();
+    sprite.hit(obst);
+    sprite.check(obst);
+}
+
+class Sprite{
+    
+    constructor(){
+        //physical props
+        this.r = 25;
+        //loc props
+        this.y = 400;
+        this.x = 0;
+        //physics
+        this.v = 0; //velocity
+        this.g = 0.3; //gravity
+        this.down = false;
+        
+        if(this.x = 400 ){
+            this.down = true;
+
+        }
+
+        
+    }
+     
+
+    show(){
+
+        //ground
+        strokeWeight(2);
+        stroke('white')
+        line(0,440,600,440)
+        noStroke();
+        fill('blue');
+        rectMode(CENTER);
+        rect(this.x,this.y,this.r*2, this.r*2);
+        if(this.y < 574){
+            fill('white')
+            
+        }else if(this.y >= 575){
+            
+            fill(10)
+
+        }
+        rect(20,this.y,10, 10);
+        stroke(155);
+    }
+    move(){
+
+        this.y += this.v;
+        this.v += this.g;
+        if(this.y > 401){
+            this.y = 400
+            this.v = 0;
+
+        }
+    }
+    jump(){
+        
+        this.v = -10;
+        
+
+    }
+    check(obst){
+        const warn = 'yellow';
+        const emergency = 'red';
+        const good = 'green'
+        noStroke();
+        if(obst.x < this.x){
+            fill(good);
+            stroke(good)
+        }else{
+            stroke(emergency)
+            fill(emergency);
+        }
+        circle(obst.x-obst.r,obst.y,5)
+        circle(this.x+this.r,this.y+this.r,5)
+        circle(this.x,this.y,5)
+        line(this.x, this.y, obst.x-obst.r, obst.y);
+        // circle(this.x+this.r,this.y+this.r,5)
+        strokeWeight(2);
+        line(this.x+this.r, this.y+this.r, obst.x-obst.r, obst.y-obst.r);
+        
+    }
+    hit(obst){
+        let hit = collideRectRect(this.x,this.y,this.r,this.r,obst.x,obst.y,obst.r,obst.r);
+        if(hit){
+            console.log('hit')
+
+        }
+        } 
+ 
+
+}
+class Obstacle{
+
+    constructor(){
+        this.r = 25;
+        this.x = 500;
+        this.y = height -this.r*2;
+        
+
+
+    }
+
+    show(){
+        noStroke();
+        fill('green')
+        rectMode(CENTER)
+        rect(this.x,this.y,this.r*2,this.r*2);
+
+    }
+    move(){
+
+        this.x -= .5;
+
+    }
+
+}
