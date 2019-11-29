@@ -186,7 +186,7 @@ Toy nueral network inputs:
       //bird's y velocity
       inputs[4] = map(this.velocity, -5, 5, 0, 1); 
 ```
-![Input Demonstration](9_Flappy_Bird/9_1_FlapAI_Bird/demo.png "Logo Title Text 1")
+![Input Demonstration](9_Flappy_Bird/9_1_FlapAI_Bird/demo.png "Flappy Bird Inputs Demo")
 
 Coding Train: Coding Challenge #31 [https://www.youtube.com/watch?v=cXgA1d_E-jY]([https://www.youtube.com/watch?v=cXgA1d_E-jY])
 + P5.js
